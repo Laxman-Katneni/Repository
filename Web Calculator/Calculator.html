@@ -1,0 +1,94 @@
+<!-- 11/1 Liam Created file. Added calculator display and table to hold buttons -->
+<!-- 11/1 James added number buttons and javascript to link them to display. -->
+<!-- 11/1 Liam refactored/standardized button names and ids -->
+<!-- 11/1 James gave sin, cos, tan buttons value=operation -->
+<!-- 11/1 Lucky Katneni added buttons for mod, power, and sqaureroot -->
+
+
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>
+            Calculator
+        </title>
+        
+        <!-- Stylesheets -->
+        <link rel="stylesheet" href="styles/Calculator.css">
+
+        <!-- Javascript files -->
+        <script src="operation_handler.js" defer></script>
+        <script src="operations.js" defer></script>
+        <script src="numpad.js"></script>
+        <script src="row3.js" defer></script>
+        <script src="power_modulus.js" defer></script>
+        <script src="trig.js" defer></script>
+        <script src="memory.js" defer></script>
+    </head>
+    <body>
+        <div id="calculator" name="calculator" class="border-black">
+            <div id="calculator-display" name="calculatorDisplay" class="border-black">0</div>
+            <!-- Planned rows based on windows calculator in standard mode. We can add more later. -Liam -->
+            <table id="calculator-buttons-table">
+                <tr> <!-- Row 1 Memory buttons -->
+                    <td><button type="button" id="button-memory-clear" value="operation">MC</button></td>
+                    <td><button type="button" id="button-memory-recall" value="operation">MR</button></td>
+                    <td><button type="button" id="button-memory-add" value="operation">M+</button></td>
+                    <td><button type="button" id="button-memory-subtract" value="operation">M-</button></td>
+                    <td><button type="button" id="button-memory-store" value="operation">MS</button></td>
+                </tr>
+                <tr> <!-- Row sin, cos, tan, deg/rad -->
+                    <td><button class="button" id="button-sin" value="operation">sin</button></td>
+                    <td><button class="button" id="button-cos" value="operation">cos</td>
+                    <td><button class="button" id="button-tan" value="operation">tan</td>
+                    <td><button class="button" id="button-rad-deg" name="radDeg">rad</button>                        
+                </tr>
+
+                <tr> 
+                    <!-- Created 11/01/2023 by Lucky Katneni -->
+                    <!-- Row 2: Modulus, Square root, Power, reciprocal -->
+                    <td><button type="button" class="button" id="button-operation-squareroot" value = "operation">√</button></td>
+                    <td><button type="button" class="button" id="button-operation-power" value = "operation">^</button></td>
+                    <td><button type="button" class="button" id="button-operation-modulus" value = "operation">mod</button></td>
+                    <td><button type="button" class="button" id="button-operation-reciprocal" value = "operation" ><sup>1</sup>/<sub>x</sub></button></td>
+                </tr>
+                <tr> <!-- Row 3: logaritihm, natural log, factorial, and flip sign -->
+                    <td><button type="button" id="button-operation-log" value="operation">log</button></td>
+                    <td><button type="button" id="button-operation-ln" value="operation">ln</button></td>
+                    <td><button type="button" id="button-operation-!" value="operation">x!</button></td>
+                    <td><button type="button" id="button-operation-flip" value="operation">+/-</button></td>
+                </tr>
+                <tr> <!-- Row 4: Clear Entry (CE), Clear (C), backspace, division -->
+                    <td><button type="button" class="button" id="button-operation-clear-entry" value="operation">CE</button></td>
+                    <td><button type="button" class="button" id="button-operation-clear" value="operation">C</button></td>
+                    <td><button type="button" class="button" id="button-operation-backspace" value = "operation">&lt-</button></td>
+                    <td><button type="button" class="button" id="button-operation-divide" value = "operation">&divide</button></td>
+                </tr>
+                <!-- Edited by Kaushik Jegath on 11/1/23 -->
+                <tr> <!-- Row 5: 7, 8, 9, multiplication-->
+                    <td><button type="button" class="button" id="button-number-7" value="7">7</td>
+                    <td><button type="button" class="button" id="button-number-8" value="8">8</td>
+                    <td><button type="button" class="button" id="button-number-9" value="9">9</td>
+                    <td><button type="button" class="button" id="button-operation-multiply" value="operation">&times</button></td>
+                </tr>
+                <tr> <!-- Row 6: 4, 5, 6, subtraction -->
+                    <td><button type="button" class="button" id="button-number-4" value="4">4</td>
+                    <td><button type="button" class="button" id="button-number-5" value="5">5</td>
+                    <td><button type="button" class="button" id="button-number-6" value="6">6</td>
+                    <td><button type="button" class="button" id="button-operation-subtract" value="operation">-</button></td>
+                </tr>
+                <tr> <!-- Row 7: 1, 2, 3, addition -->
+                    <td><button type="button" class="button" id="button-number-1" value="1">1</td>
+                    <td><button type="button" class="button" id="button-number-2" value="2">2</td>
+                    <td><button type="button" class="button" id="button-number-3" value="3">3</td>
+                    <td><button type="button" class="button" id="button-operation-add" value="operation">+</button></td>
+                </tr>
+                <!-- Edited by James Fitzgerald on 11/7/2023: Removed () buttons-->
+                <tr> <!-- Row 7: Flip sign, 0, decimal, equals -->
+                    <td><button class="button" value="0" id="button-number-0">0</td>
+                    <td><button class="button" value="." id="button-operation-decimal">.</td>
+                    <td><button class="button" id="button-operation-equals" value="operation">=</td>
+                </tr>
+            </table>
+        </div>
+    </body>
+</html>
