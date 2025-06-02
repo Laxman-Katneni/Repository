@@ -6,7 +6,7 @@ import components.simplewriter.SimpleWriter1L;
 /**
  * Put a short phrase describing the program here.
  *
- * @author Lucky Katneni
+ * @author Laxman Katneni
  *
  */
 public final class Newton4 {
