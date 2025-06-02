@@ -10,7 +10,7 @@ import components.simplewriter.SimpleWriter1L;
 /**
  * Utilities that could be used with RSA cryptosystems.
  *
- * @LuckyKatneni
+ * @Laxman Katneni
  *
  */
 public final class CryptoUtilities {
