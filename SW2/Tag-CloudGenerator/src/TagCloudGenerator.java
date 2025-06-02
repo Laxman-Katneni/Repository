@@ -22,7 +22,7 @@ import components.utilities.Reporter;
  * input file and outputs an HTML document with a tag cloud of the N most common
  * words in alphabetical order.
  *
- * @Lucky Katneni and Trent Jackson
+ * @Laxman Katneni and Trent Jackson
  *
  */
 
