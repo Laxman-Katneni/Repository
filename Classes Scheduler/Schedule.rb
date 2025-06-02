@@ -1,14 +1,4 @@
-# Created 09/25/2023 by Victor Madelaine
-# Edited 09/25/2023 by Victor Madelaine (implement generate schedule)
-# Edited 09/27/2023 by Jason Su (implement dayStartTime)
-# Edited 09/29/2023 by Victor Madelaine (edit generate schedule to implement event class)
-# Edited 10/01/2023 by Jason Su (implement dayStartTime, dayEndTime)
-# Edited 10/02/2023 by Jason Su (implement noConflicts?)
-# Edited 10/04/2023 by Victor Madelaine (implement sort in generate schedule)
-# Edited 10/04/2023 by Jason Su (make changes to noConflicts?)
-# Edited 10/09/2023 by Victor Madelaine (add functionality for asynchronous classes in generateSchedule)
-# Edited 10/11/2023 by Victor Madelaine (re-implement noConflicts? method)
-# Edited 10/11/2023 by Jason Su (documentation, added @param, @return)
+#@Authors @Team Run-time-terror - Victor Madelaine, Jason Su, Laxman Katneni, Khushi Patel, Landon McElroy
 require_relative "Event"
 require_relative "ClassOSU"
 
@@ -20,10 +10,7 @@ class Schedule
 
     attr_accessor :classes, :schedule
 
-    # Created 09/25/2023 by Jason Su
-    # Edited 10/02/2023 by Jason Su (implemented method and documentation)
-    # Edited 10/04/2023 by Jason Su (make changes to method so it also works without a schedule being generated)
-    # Edited 10/11/2023 by Victor Madelaine (fix method)
+
     # return true if @classes has no conflicts, false otherwise
     # @param classes [Array<ClassOSU>] an array of ClassOSU objects
     # @return [Boolean]
@@ -37,10 +24,7 @@ class Schedule
         true
     end
 
-    # Created 09/25/2023 by Jason Su
-    # Edited 09/27/2023 by Jason Su (implemented method and documentation)
-    # Edited 09/30/2023 by Jason Su (completed method implementation and documentation)
-    # Edited 10/01/2023 by Jason Su (update with terse code)
+
     # given a day, return the start of the first class of that day
     # @param day [String] the day of the week
     # @return [String] the start time of the first class of that day
@@ -51,9 +35,7 @@ class Schedule
         else classesOfDay[0].event.startTime end
     end
 
-    # Created 09/25/2023 by Jason Su
-    # Edited 10/01/2023 by Jason Su (completed method implementation and documentation)
-    # Edited 10/01/2023 by Jason Su (update with terse code)
+
     # given a day, return the end of the last class of that day
     # @param day [String] the day of the week
     # @return [String] the end time of the last class of that day
@@ -64,11 +46,7 @@ class Schedule
         else classesOfDay[-1].event.endTime end
     end
 
-    # Created 09/25/2023 by Victor Madelaine
-    # Edited 09/26/2023 by Victor Madelaine (implemented method and documentation)
-    # Edited 09/29/2023 by Victor Madelaine (use event object in Class class)
-    # Edited 10/04/2023 by Victor Madelaine (implement sort to put classes in correct order)
-    # Edited 10/09/2023 by Victor Madelaine (add functionality for asynchronous classes)
+
     # Creates a hash map by days of the week and populates the hash map @schedule with Class objects from @classes
     # @return [void]
     private def generateSchedule
