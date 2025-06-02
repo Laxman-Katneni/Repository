@@ -1,0 +1,386 @@
+<!DOCTYPE html>
+<head>
+	<title>schedule 1</title>
+	<link rel="stylesheet" href="style.css" >
+	 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+	<script>
+		function showOtherCalendar(shown, next) {
+			document.getElementById(shown).style.display = "none";
+			document.getElementById(next).style.display = "block";
+		}
+	</script>
+</head>
+<body>
+	<div class="weekdays">
+		<div style="width:5%"></div>
+		<div>Monday</div>
+		<div>Tuesday</div>
+		<div>Wednesday</div>
+		<div>Thursday</div>
+		<div>Friday</div>
+	</div>
+	<div id="calendar0">
+	<div class="days">
+		<div class="time">
+			<div>8:00  -</div>
+			<div>9:00  -</div>
+			<div>10:00 -</div>
+			<div>11:00 -</div>
+			<div>12:00 -</div>
+			<div>1:00  -</div>
+			<div>2:00  -</div>
+			<div>3:00  -</div>
+			<div>4:00  -</div>
+			<div>5:00  -</div>
+			<div>7:00  -</div>
+			<div>8:00  -</div>
+			<div style="height: 15px">9:00  -</div>
+		</div>
+		<div>
+			<div style="height: 60px; padding:0"></div>
+			<div class="class" style="background-color: blue; height: 60px ">
+				<span class="className"> class1</span><br>
+				<span class="classInfo">Bradley Hall<br>9:00 - 10:00<br>prof something</span>
+			</div>
+			<div class="between" style="height: 60px">
+				<span>walking <i class="fa fa-male"></i>: 4.08 minutes</span>
+				<span>biking <i class="fa fa-bicycle"></i>: 0.98 minutes</span>
+				<span>driving <i class="fa fa-car"></i>: 0.66 minutes</span>
+			</div>
+			<div class="class" style="background-color: red; height: 60px ">
+				<span class="className"> class2</span><br>
+				<span class="classInfo">Hagerty Hall<br>11:00 - 12:00<br>prof something</span>
+			</div>
+			<div class="between" style="height: 30px">
+				<span>walking <i class="fa fa-male"></i>: 8.54 minutes</span>
+			</div>
+			<div class="class" style="background-color: green; height: 60px ">
+				<span class="className"> class5</span><br>
+				<span class="classInfo">Hitchcock Hall<br>12:30 - 13:30<br>prof something</span>
+			</div>
+		</div>
+		<div>
+			<div style="height: 0px; padding:0"></div>
+			<div class="class" style="background-color: purple; height: 60px ">
+				<span class="className"> class4</span><br>
+				<span class="classInfo">Dreese Laboratories<br>8:00 - 9:00<br>prof something</span>
+			</div>
+			<div style="height: 10px; padding:0"></div>
+			<div class="class" style="background-color: yellow; height: 60px ">
+				<span class="className"> class6</span><br>
+				<span class="classInfo">Bolz Hall<br>9:10 - 10:10<br>prof something</span>
+			</div>
+			<div class="between" style="height: 170px">
+				<span>walking <i class="fa fa-male"></i>: 1.25 minutes</span>
+				<span>biking <i class="fa fa-bicycle"></i>: 0.3 minutes</span>
+				<span>driving <i class="fa fa-car"></i>: 0.2 minutes</span>
+			</div>
+			<div class="class" style="background-color: orange; height: 60px ">
+				<span class="className"> class3</span><br>
+				<span class="classInfo">Scott Laboratory<br>13:00 - 14:00<br>prof something</span>
+			</div>
+		</div>
+		<div>
+			<div style="height: 60px; padding:0"></div>
+			<div class="class" style="background-color: blue; height: 60px ">
+				<span class="className"> class1</span><br>
+				<span class="classInfo">Bradley Hall<br>9:00 - 10:00<br>prof something</span>
+			</div>
+			<div class="between" style="height: 60px">
+				<span>walking <i class="fa fa-male"></i>: 4.08 minutes</span>
+				<span>biking <i class="fa fa-bicycle"></i>: 0.98 minutes</span>
+				<span>driving <i class="fa fa-car"></i>: 0.66 minutes</span>
+			</div>
+			<div class="class" style="background-color: red; height: 60px ">
+				<span class="className"> class2</span><br>
+				<span class="classInfo">Hagerty Hall<br>11:00 - 12:00<br>prof something</span>
+			</div>
+			<div class="between" style="height: 30px">
+				<span>walking <i class="fa fa-male"></i>: 8.54 minutes</span>
+			</div>
+			<div class="class" style="background-color: green; height: 60px ">
+				<span class="className"> class5</span><br>
+				<span class="classInfo">Hitchcock Hall<br>12:30 - 13:30<br>prof something</span>
+			</div>
+		</div>
+		<div>
+			<div style="height: 0px; padding:0"></div>
+			<div class="class" style="background-color: purple; height: 60px ">
+				<span class="className"> class4</span><br>
+				<span class="classInfo">Dreese Laboratories<br>8:00 - 9:00<br>prof something</span>
+			</div>
+			<div style="height: 10px; padding:0"></div>
+			<div class="class" style="background-color: yellow; height: 60px ">
+				<span class="className"> class6</span><br>
+				<span class="classInfo">Bolz Hall<br>9:10 - 10:10<br>prof something</span>
+			</div>
+			<div class="between" style="height: 170px">
+				<span>walking <i class="fa fa-male"></i>: 1.25 minutes</span>
+				<span>biking <i class="fa fa-bicycle"></i>: 0.3 minutes</span>
+				<span>driving <i class="fa fa-car"></i>: 0.2 minutes</span>
+			</div>
+			<div class="class" style="background-color: orange; height: 60px ">
+				<span class="className"> class3</span><br>
+				<span class="classInfo">Scott Laboratory<br>13:00 - 14:00<br>prof something</span>
+			</div>
+		</div>
+		<div>
+			<div style="height: 60px; padding:0"></div>
+			<div class="class" style="background-color: blue; height: 60px ">
+				<span class="className"> class1</span><br>
+				<span class="classInfo">Bradley Hall<br>9:00 - 10:00<br>prof something</span>
+			</div>
+			<div class="between" style="height: 60px">
+				<span>walking <i class="fa fa-male"></i>: 4.08 minutes</span>
+				<span>biking <i class="fa fa-bicycle"></i>: 0.98 minutes</span>
+				<span>driving <i class="fa fa-car"></i>: 0.66 minutes</span>
+			</div>
+			<div class="class" style="background-color: red; height: 60px ">
+				<span class="className"> class2</span><br>
+				<span class="classInfo">Hagerty Hall<br>11:00 - 12:00<br>prof something</span>
+			</div>
+			<div class="between" style="height: 30px">
+				<span>walking <i class="fa fa-male"></i>: 8.54 minutes</span>
+			</div>
+			<div class="class" style="background-color: green; height: 60px ">
+				<span class="className"> class5</span><br>
+				<span class="classInfo">Hitchcock Hall<br>12:30 - 13:30<br>prof something</span>
+			</div>
+		</div>
+	</div>
+	<div class="button">
+		<button class="next-button" onclick="showOtherCalendar('calendar0', 'calendar1')">next</button>
+	</div>
+	</div>
+	<div id="calendar1" style="display: none">
+	<div class="days">
+		<div class="time">
+			<div>8:00  -</div>
+			<div>9:00  -</div>
+			<div>10:00 -</div>
+			<div>11:00 -</div>
+			<div>12:00 -</div>
+			<div>1:00  -</div>
+			<div>2:00  -</div>
+			<div>3:00  -</div>
+			<div>4:00  -</div>
+			<div>5:00  -</div>
+			<div>7:00  -</div>
+			<div>8:00  -</div>
+			<div style="height: 15px">9:00  -</div>
+		</div>
+		<div>
+			<div style="height: 60px; padding:0"></div>
+			<div class="class" style="background-color: blue; height: 60px ">
+				<span class="className"> class1</span><br>
+				<span class="classInfo">Bradley Hall<br>9:00 - 10:00<br>prof something</span>
+			</div>
+			<div class="between" style="height: 60px">
+				<span>walking <i class="fa fa-male"></i>: 4.08 minutes</span>
+				<span>biking <i class="fa fa-bicycle"></i>: 0.98 minutes</span>
+				<span>driving <i class="fa fa-car"></i>: 0.66 minutes</span>
+			</div>
+			<div class="class" style="background-color: red; height: 60px ">
+				<span class="className"> class2</span><br>
+				<span class="classInfo">Hagerty Hall<br>11:00 - 12:00<br>prof something</span>
+			</div>
+		</div>
+		<div>
+			<div style="height: 300px; padding:0"></div>
+			<div class="class" style="background-color: orange; height: 60px ">
+				<span class="className"> class3</span><br>
+				<span class="classInfo">Scott Laboratory<br>13:00 - 14:00<br>prof something</span>
+			</div>
+		</div>
+		<div>
+			<div style="height: 60px; padding:0"></div>
+			<div class="class" style="background-color: blue; height: 60px ">
+				<span class="className"> class1</span><br>
+				<span class="classInfo">Bradley Hall<br>9:00 - 10:00<br>prof something</span>
+			</div>
+			<div class="between" style="height: 60px">
+				<span>walking <i class="fa fa-male"></i>: 4.08 minutes</span>
+				<span>biking <i class="fa fa-bicycle"></i>: 0.98 minutes</span>
+				<span>driving <i class="fa fa-car"></i>: 0.66 minutes</span>
+			</div>
+			<div class="class" style="background-color: red; height: 60px ">
+				<span class="className"> class2</span><br>
+				<span class="classInfo">Hagerty Hall<br>11:00 - 12:00<br>prof something</span>
+			</div>
+		</div>
+		<div>
+			<div style="height: 300px; padding:0"></div>
+			<div class="class" style="background-color: orange; height: 60px ">
+				<span class="className"> class3</span><br>
+				<span class="classInfo">Scott Laboratory<br>13:00 - 14:00<br>prof something</span>
+			</div>
+		</div>
+		<div>
+			<div style="height: 60px; padding:0"></div>
+			<div class="class" style="background-color: blue; height: 60px ">
+				<span class="className"> class1</span><br>
+				<span class="classInfo">Bradley Hall<br>9:00 - 10:00<br>prof something</span>
+			</div>
+			<div class="between" style="height: 60px">
+				<span>walking <i class="fa fa-male"></i>: 4.08 minutes</span>
+				<span>biking <i class="fa fa-bicycle"></i>: 0.98 minutes</span>
+				<span>driving <i class="fa fa-car"></i>: 0.66 minutes</span>
+			</div>
+			<div class="class" style="background-color: red; height: 60px ">
+				<span class="className"> class2</span><br>
+				<span class="classInfo">Hagerty Hall<br>11:00 - 12:00<br>prof something</span>
+			</div>
+		</div>
+	</div>
+	<div class="asynchronous">
+			<div class="class" style="background-color: purple; height: 30px;">
+				<span class="className"> class13</span><br>
+				<span class="classInfo">Proffessor blah</span>
+			</div>
+	</div>
+	<div class="button">
+		<button class="prev-button" onclick="showOtherCalendar('calendar1', 'calendar0')">previous</button>
+		<button class="next-button" onclick="showOtherCalendar('calendar1', 'calendar2')">next</button>
+	</div>
+	</div>
+	<div id="calendar2" style="display: none">
+	<div class="days">
+		<div class="time">
+			<div>8:00  -</div>
+			<div>9:00  -</div>
+			<div>10:00 -</div>
+			<div>11:00 -</div>
+			<div>12:00 -</div>
+			<div>1:00  -</div>
+			<div>2:00  -</div>
+			<div>3:00  -</div>
+			<div>4:00  -</div>
+			<div>5:00  -</div>
+			<div>7:00  -</div>
+			<div>8:00  -</div>
+			<div style="height: 15px">9:00  -</div>
+		</div>
+		<div>
+			<div style="height: 60px; padding:0"></div>
+			<div class="class" style="background-color: blue; height: 60px ">
+				<span class="className"> class7</span><br>
+				<span class="classInfo">Bradley Hall<br>9:00 - 10:00<br>prof something</span>
+			</div>
+			<div class="between" style="height: 60px">
+				<span>walking <i class="fa fa-male"></i>: 4.08 minutes</span>
+				<span>biking <i class="fa fa-bicycle"></i>: 0.98 minutes</span>
+				<span>driving <i class="fa fa-car"></i>: 0.66 minutes</span>
+			</div>
+			<div class="class" style="background-color: red; height: 60px ">
+				<span class="className"> class8</span><br>
+				<span class="classInfo">Hagerty Hall<br>11:00 - 12:00<br>prof something</span>
+			</div>
+			<div class="between" style="height: 30px">
+				<span>walking <i class="fa fa-male"></i>: 8.54 minutes</span>
+			</div>
+			<div class="class" style="background-color: green; height: 60px ">
+				<span class="className"> class11</span><br>
+				<span class="classInfo">Hitchcock Hall<br>12:30 - 13:30<br>prof something</span>
+			</div>
+		</div>
+		<div>
+			<div style="height: 0px; padding:0"></div>
+			<div class="class" style="background-color: purple; height: 60px ">
+				<span class="className"> class10</span><br>
+				<span class="classInfo">Dreese Laboratories<br>8:00 - 9:00<br>prof something</span>
+			</div>
+			<div style="height: 10px; padding:0"></div>
+			<div class="class" style="background-color: yellow; height: 60px ">
+				<span class="className"> class12</span><br>
+				<span class="classInfo">Bolz Hall<br>9:10 - 10:10<br>prof something</span>
+			</div>
+			<div class="between" style="height: 170px">
+				<span>walking <i class="fa fa-male"></i>: 1.25 minutes</span>
+				<span>biking <i class="fa fa-bicycle"></i>: 0.3 minutes</span>
+				<span>driving <i class="fa fa-car"></i>: 0.2 minutes</span>
+			</div>
+			<div class="class" style="background-color: orange; height: 60px ">
+				<span class="className"> class9</span><br>
+				<span class="classInfo">Scott Laboratory<br>13:00 - 14:00<br>prof something</span>
+			</div>
+		</div>
+		<div>
+			<div style="height: 60px; padding:0"></div>
+			<div class="class" style="background-color: blue; height: 60px ">
+				<span class="className"> class7</span><br>
+				<span class="classInfo">Bradley Hall<br>9:00 - 10:00<br>prof something</span>
+			</div>
+			<div class="between" style="height: 60px">
+				<span>walking <i class="fa fa-male"></i>: 4.08 minutes</span>
+				<span>biking <i class="fa fa-bicycle"></i>: 0.98 minutes</span>
+				<span>driving <i class="fa fa-car"></i>: 0.66 minutes</span>
+			</div>
+			<div class="class" style="background-color: red; height: 60px ">
+				<span class="className"> class8</span><br>
+				<span class="classInfo">Hagerty Hall<br>11:00 - 12:00<br>prof something</span>
+			</div>
+			<div class="between" style="height: 30px">
+				<span>walking <i class="fa fa-male"></i>: 8.54 minutes</span>
+			</div>
+			<div class="class" style="background-color: green; height: 60px ">
+				<span class="className"> class11</span><br>
+				<span class="classInfo">Hitchcock Hall<br>12:30 - 13:30<br>prof something</span>
+			</div>
+		</div>
+		<div>
+			<div style="height: 0px; padding:0"></div>
+			<div class="class" style="background-color: purple; height: 60px ">
+				<span class="className"> class10</span><br>
+				<span class="classInfo">Dreese Laboratories<br>8:00 - 9:00<br>prof something</span>
+			</div>
+			<div style="height: 10px; padding:0"></div>
+			<div class="class" style="background-color: yellow; height: 60px ">
+				<span class="className"> class12</span><br>
+				<span class="classInfo">Bolz Hall<br>9:10 - 10:10<br>prof something</span>
+			</div>
+			<div class="between" style="height: 170px">
+				<span>walking <i class="fa fa-male"></i>: 1.25 minutes</span>
+				<span>biking <i class="fa fa-bicycle"></i>: 0.3 minutes</span>
+				<span>driving <i class="fa fa-car"></i>: 0.2 minutes</span>
+			</div>
+			<div class="class" style="background-color: orange; height: 60px ">
+				<span class="className"> class9</span><br>
+				<span class="classInfo">Scott Laboratory<br>13:00 - 14:00<br>prof something</span>
+			</div>
+		</div>
+		<div>
+			<div style="height: 60px; padding:0"></div>
+			<div class="class" style="background-color: blue; height: 60px ">
+				<span class="className"> class7</span><br>
+				<span class="classInfo">Bradley Hall<br>9:00 - 10:00<br>prof something</span>
+			</div>
+			<div class="between" style="height: 60px">
+				<span>walking <i class="fa fa-male"></i>: 4.08 minutes</span>
+				<span>biking <i class="fa fa-bicycle"></i>: 0.98 minutes</span>
+				<span>driving <i class="fa fa-car"></i>: 0.66 minutes</span>
+			</div>
+			<div class="class" style="background-color: red; height: 60px ">
+				<span class="className"> class8</span><br>
+				<span class="classInfo">Hagerty Hall<br>11:00 - 12:00<br>prof something</span>
+			</div>
+			<div class="between" style="height: 30px">
+				<span>walking <i class="fa fa-male"></i>: 8.54 minutes</span>
+			</div>
+			<div class="class" style="background-color: green; height: 60px ">
+				<span class="className"> class11</span><br>
+				<span class="classInfo">Hitchcock Hall<br>12:30 - 13:30<br>prof something</span>
+			</div>
+		</div>
+	</div>
+	<div class="asynchronous">
+			<div class="class" style="background-color: pink; height: 30px;">
+				<span class="className"> class13</span><br>
+				<span class="classInfo">Proffessor blah</span>
+			</div>
+	</div>
+	<div class="button">
+		<button class="prev-button" onclick="showOtherCalendar('calendar2', 'calendar1')">previous</button>
+	</div>
+	</div>
+</body>
+</html>

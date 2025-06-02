@@ -1,0 +1,155 @@
+<!-- HEADER -->
+<!DOCTYPE html>
+<head>
+    <title>Test html file</title>
+    <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <script>
+		function showOtherCalendar(shown, next) {
+			document.getElementById(shown).style.display = "none";
+			document.getElementById(next).style.display = "block";
+            if (next === 'schedule2') {
+                document.querySelector('button[onclick="showOtherCalendar(\'schedule2\', \'schedule1\')"]').removeAttribute('hidden');
+            } else {
+                document.querySelector('button[onclick="showOtherCalendar(\'schedule2\', \'schedule1\')"]').setAttribute('hidden', '');
+            }
+            if (shown === 'schedule1') {
+                document.querySelector('button.prev-button').setAttribute('hidden', '');
+            } else {
+                document.querySelector('button.prev-button').removeAttribute('hidden');
+            }
+		}
+	</script>
+</head>
+<!-- end HEADER -->
+<!-- createBody -->
+<body>
+    <!-- DAYSROW -->
+    <div class="weekdays">
+        <div style="width:5%"></div>
+        <div>Monday</div>
+        <div>Tuesday</div>
+        <div>Wednesday</div>
+        <div>Thursday</div>
+        <div>Friday</div>
+    </div>
+    <!-- end DAYSROW -->
+
+    <!-- createSchedule -->
+    <div id="schedule1">
+        <div class="days">
+            <!-- TIMECOLUMN -->
+            <div class="time">
+                <div>8:00  -</div>
+                <div>9:00  -</div>
+                <div>10:00 -</div>
+                <div>11:00 -</div>
+                <div>12:00 -</div>
+                <div>1:00  -</div>
+                <div>2:00  -</div>
+                <div>3:00  -</div>
+                <div>4:00  -</div>
+                <div>5:00  -</div>
+                <div>7:00  -</div>
+                <div>8:00  -</div>
+                <div style="height: 15px">9:00  -</div>
+            </div>
+            <!-- end TIMECOLUMN -->
+            <!-- createCalendarElements -->
+            <!-- createDay -->
+            <div>
+                <div class="class", style="height: 60px; background-color: orange">
+                    <span class="className">Class 1</span><br>
+                    <span class="classInfo">location<br>8:00 - 8:55<br>Prof name</span>
+                </div>
+                <div class="class", style="height: 60px; background-color: red">
+                    <span class="className">Class 1</span><br>
+                    <span class="classInfo">location<br>8:00 - 8:55<br>Prof name</span>
+                </div>
+                <div class="class", style="height: 60px; background-color: blue">
+                    <span class="className">Class 1</span><br>
+                    <span class="classInfo">location<br>8:00 - 8:55<br>Prof name</span>
+                </div>
+                <div class="class", style="height: 60px; background-color: orange"></div>
+                <div class="class", style="height: 60px; background-color: red"></div>
+                <div class="class", style="height: 60px; background-color: blue"></div>
+                <div class="class", style="height: 60px; background-color: orange"></div>
+                <div class="class", style="height: 60px; background-color: red"></div>
+                <div class="class", style="height: 60px; background-color: blue"></div>
+                <div class="class", style="height: 60px; background-color: orange"></div>
+                <div class="class", style="height: 60px; background-color: red"></div>
+                <div class="class", style="height: 60px; background-color: blue"></div>
+            </div>
+            <!-- end createDay -->
+            <!-- createDay -->
+            <div>
+                <div class="class", style="height: 60px; background-color: orange"></div>
+                <!-- createTravelInfo -->
+                <div class="between">
+                    walking <i class="fa fa-male"></i>:<br>
+                    biking <i class="fa fa-bicycle"></i>:<br>
+                    driving <i class="fa fa-car"></i>:
+                </div>
+                <!-- end createTravelInfo -->
+                <div class="class", style="height: 60px; background-color: blue"></div>
+            </div>
+            <!-- end createDay -->
+            <div>
+                <div class="class", style="height: 60px; background-color: blue"></div>
+
+                <div class="class", style="height: 60px; background-color: blue"></div>
+            </div>
+            <div></div>
+            <div></div>
+            <!-- end createCalendarElements -->
+        </div>
+        <!-- createAsynchInfo -->
+        <div class="asynchronous">
+            <div class="class", style="height: 60px; background-color: blue">
+                <span class="className">Class 1</span><br>
+                <span class="classInfo">location<br>8:00 - 8:55<br>Prof name</span>
+            </div>
+            <div class="class", style="height: 60px; background-color: red">
+                <span class="className">Class 1</span><br>
+                <span class="classInfo">location<br>8:00 - 8:55<br>Prof name</span>
+            </div>
+        </div>
+        <!-- end createAsynchInfo -->
+        <div class="buttons">
+            <button onclick="showOtherCalendar('schedule2', 'schedule1')"class="prev-button">previous</button>
+            <button onclick="showOtherCalendar('schedule1', 'schedule2')">next</button>
+        </div>    
+    </div>
+    <!-- end createSchedule -->
+    <div id="schedule2", style="display:none">
+		<div class="days">
+			<div class="time">
+				<div>8:00  -</div>
+				<div>9:00  -</div>
+				<div>10:00 -</div>
+				<div>11:00 -</div>
+				<div>12:00 -</div>
+				<div>1:00  -</div>
+				<div>2:00  -</div>
+				<div>3:00  -</div>
+				<div>4:00  -</div>
+				<div>5:00  -</div>
+				<div>7:00  -</div>
+				<div>8:00  -</div>
+				<div style="height: 15px">9:00  -</div>
+			</div>
+		</div>
+		<div class="asynchronous">
+			<div class="class", style="background-color: pink;">
+				<span class="className"> class4</span><br>
+				<span class="classInfo">Proffessor blah</span>
+			</div>
+		</div>
+        <div class="buttons">
+            <button onclick="showOtherCalendar('schedule1', 'schedule2')"class="next-button">next</button>
+            <button onclick="showOtherCalendar('schedule2', 'schedule1')">previous</button>
+        </div>
+	</div>
+</body>
+<!-- end createBody -->
+</html>

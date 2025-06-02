@@ -1,0 +1,123 @@
+/* SCHEDULE */
+/* box containing all days of the week */
+.weekdays {
+    display: flex;
+    justify-content: space-between;
+    margin: 20px;
+    padding: 10px 0;
+    border: 2px  solid rgb(128, 0, 0);
+}
+
+/* boxes for individual days */
+.weekdays div {
+    display: inline-block;
+    width: 18%;
+    text-align: center;
+    font-size: 15px;
+    border: 2px  solid green;
+  }
+
+/* Entire box for classes and times */
+.days {
+    display: flex;
+    justify-content: space-between;
+    padding: 0;
+    margin-left: 20px;
+    margin-right: 20px;
+    border: 2px  solid purple;
+}
+
+/* Columns for time */
+.days .time {
+    display: grid;
+    align-items: start;
+    justify-content: baseline;
+    padding: 0;
+    width: 5%;
+    font-family: 'Courier New', Courier, monospace;
+    border-right: 2px  solid red;
+}
+
+/* entries for time column */
+.days .time div {
+    width: 100%;
+    height: 60px;
+    text-align: right;
+    font-size: 13px;
+    padding: 0;
+}
+
+/* Columns for the days of the week */
+.days div { 
+    padding-top: 8px;
+    width: 18%;
+    display: flow-root;    
+}
+
+/* CLASS ENTRIES */
+/* Entries of the columns for the days of the week (classes) */
+div .class { 
+    width: 100%;
+    border-radius: 10px;
+    padding: 0;
+    align-items: center;
+    text-align: center;
+    line-height: 15px;
+}
+
+/* Text styling for class name */
+.className {
+    font-size: 16px; 
+    font-weight: bold;
+}
+
+/* Text styling for class name */
+.classInfo {
+    padding: 0;
+    font-size: 12px; 
+}
+
+/* dividers between classes with travel info */
+.days div .between { 
+    height: 60px;
+    padding: 0;
+    align-items: center;
+    display: grid;
+    width: 90%;
+    text-align: left;
+    border-right: 2px dashed grey;
+}
+
+/* Text styling for travel info */
+.days div .between span {
+    font-size: 12px;
+}
+
+/* ASYNCHRONOUS CLASSES */
+/* box containing all asynchronous classes */
+.asynchronous {
+    width: 100%;
+    height: 30px;
+    padding: 0;
+    margin-left: 20px;
+    margin-right: 20px;
+    border: 2px  solid red;
+    display: flex;
+}
+
+/* box for individual asynchronous classes */
+.asynchronous div {
+    width: 20%;
+}
+
+/* BUTTONS*/
+/* box containing all buttons */
+button {
+    background-color: #4CAF50;
+    border: none;
+    color: white;
+    text-align: center;
+    display: inline-block;
+    font-size: 16px;
+    border-radius: 10px;
+}
