@@ -6,7 +6,7 @@ import components.naturalnumber.NaturalNumber;
  * The Natural Number Calculator model consists of the top and bottom operands
  * (which have only getter methods).
  *
- * @author Bruce W. Weide
+ * @author Laxman Katneni
  *
  * @mathmodel <pre>
  * type NNCalcModel is modeled by
