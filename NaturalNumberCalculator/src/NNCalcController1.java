@@ -4,7 +4,7 @@ import components.naturalnumber.NaturalNumber2;
 /**
  * Controller class.
  *
- * @author Put your name here
+ * @author Laxman Katneni
  */
 public final class NNCalcController1 implements NNCalcController {
 
@@ -37,7 +37,7 @@ public final class NNCalcController1 implements NNCalcController {
     private static void updateViewToMatchModel(NNCalcModel model,
             NNCalcView view) {
 
-        // TODO: fill in body
+        
         NaturalNumber top = model.top();
         NaturalNumber bottom = model.bottom();
 
@@ -124,7 +124,7 @@ public final class NNCalcController1 implements NNCalcController {
     @Override
     public void processEnterEvent() {
 
-        // TODO: fill in body
+        
         NaturalNumber top = this.model.top();
         NaturalNumber bottom = this.model.bottom();
 
@@ -139,7 +139,7 @@ public final class NNCalcController1 implements NNCalcController {
     @Override
     public void processAddEvent() {
 
-        // TODO: fill in body
+       
         NaturalNumber top = this.model.top();
         NaturalNumber bottom = this.model.bottom();
 
@@ -155,7 +155,7 @@ public final class NNCalcController1 implements NNCalcController {
     @Override
     public void processSubtractEvent() {
 
-        // TODO: fill in body
+       
         NaturalNumber top = this.model.top();
         NaturalNumber bottom = this.model.bottom();
 
@@ -172,7 +172,7 @@ public final class NNCalcController1 implements NNCalcController {
     @Override
     public void processMultiplyEvent() {
 
-        // TODO: fill in body
+     
         NaturalNumber top = this.model.top();
         NaturalNumber bottom = this.model.bottom();
 
@@ -189,7 +189,7 @@ public final class NNCalcController1 implements NNCalcController {
     @Override
     public void processDivideEvent() {
 
-        // TODO: fill in body
+ 
         NaturalNumber top = this.model.top();
         NaturalNumber bottom = this.model.bottom();
 
@@ -206,7 +206,7 @@ public final class NNCalcController1 implements NNCalcController {
     @Override
     public void processPowerEvent() {
 
-        // TODO: fill in body
+ 
         NaturalNumber top = this.model.top();
         NaturalNumber bottom = this.model.bottom();
 
@@ -222,7 +222,6 @@ public final class NNCalcController1 implements NNCalcController {
     @Override
     public void processRootEvent() {
 
-        // TODO: fill in body
         NaturalNumber top = this.model.top();
         NaturalNumber bottom = this.model.bottom();
 
@@ -238,7 +237,7 @@ public final class NNCalcController1 implements NNCalcController {
     @Override
     public void processAddNewDigitEvent(int digit) {
 
-        // TODO: fill in body
+        
 
         NaturalNumber bottom = this.model.bottom();
 
