@@ -6,7 +6,7 @@ import components.naturalnumber.NaturalNumber;
 import components.naturalnumber.NaturalNumber2;
 
 /**
- * @author Put your name here
+ * @author Laxman Katneni
  *
  */
 public class CryptoUtilitiesTest {
