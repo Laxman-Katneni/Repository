@@ -1,8 +1,4 @@
-# Created 09/29/2023 by Victor Madelaine
-# Edited 10/01/2023 by Victor Madelaine (implement functions according to test.html)
-# Edited 10/04/2023 by Victor Madelaine (implement createTravelInfo and document code)
-# Edited 10/09/2023 by Victor Madelaine (implement createAsynchInfo)
-
+# @Team Run-time-terror - Victor Madelaine, Jason Su, Laxman Katneni, Khushi Patel, Landon McElroy
 require_relative "Event"
 require_relative "ClassOSU"
 require_relative "Schedule"
@@ -27,7 +23,7 @@ class HTMLGenerator
 
     attr_accessor :name, :scheduleToCreate
 
-    # Created 10/01/2023 by Victor Madelaine
+
     # creates html file and writes html code using private methods
     # @return HTML file and puts file in htmlFiles folder
     def generateHTMLFile
@@ -40,14 +36,14 @@ class HTMLGenerator
         file.close
     end
 
-    # Created 10/01/2023 by Victor Madelaine
+
     # returns a string for the html header according to @name
     # @return String with HTML header
     private def createHeader
         "<!DOCTYPE html>\n<head>\n\t<title>#{@name}</title>#{CSSLINKS}#{SCRIPT}\n</head>"
     end
 
-    # Created 10/01/2023 by Victor Madelaine
+
     # returns a string for the html body according to @scheduleToCreate
     # @return String with HTML body
     private def createBody
@@ -57,7 +53,7 @@ class HTMLGenerator
         str
     end
 
-    # Created 10/01/2023 by Victor Madelaine
+
     # @param schedule   schedule to to create the html <div> tag for
     # @return String with HTML <div> tag for the schedule
     private def createSchedule schedule
@@ -66,7 +62,7 @@ class HTMLGenerator
         str += ">\n\t<div class=\"days\">#{TIMECOLUMN}#{self.createCalendarElements schedule}\n\t</div>#{self.createAsynchInfo schedule}#{self.buttonGenerator schedule}\n\t</div>"
     end
 
-    # Created 10/01/2023 by Victor Madelaine
+
     # Returns html <div> tag (String) with contents of the calendar for the given schedule
     # @param schedule   schedule to create the calendar from
     # @return String with HTML <div> tag for the classes for each day of the week
@@ -75,8 +71,6 @@ class HTMLGenerator
         [:monday, :tuesday, :wednesday, :thursday, :friday].each{|day| string += self.createDay schedule, day}
         string
     end
-
-    # Created 10/01/2023 by Victor Madelaine
     # Returns html <div> tag (String) for the given day in the given schedule
     # @param schedule   schedule to access the classes from
     # @param day        symbol for the day to access the classes from
@@ -101,7 +95,7 @@ class HTMLGenerator
         string + "\n\t\t</div>"
     end
 
-    # Created 10/01/2023 by Victor Madelaine
+
     # creates div HTML tag (String) acting as a spacer between classes
     # @param pixels    Integer for the amount of pizels the height of the spacer is
     # @return String with HTML <div> tag spacer between classes
@@ -109,7 +103,7 @@ class HTMLGenerator
         "\n\t\t\t<div style=\"height: #{pixels}px; padding:0\"></div>"
     end
 
-    # Created 10/01/2023 by Victor Madelaine
+
     # creates HTML <div> tag for a class within schedule according to the given day and index within the hash map
     # @param schedule   schedule to access the class from
     # @param day        symbol for the day to access the classes from schedule
@@ -125,7 +119,7 @@ class HTMLGenerator
         end
     end
 
-    # Created 10/04/2023 by Victor Madelaine
+
     # creates HTML div tag showing walking, biking, and driving times from a class to another class
     # @param schedule   schedule to access the information from
     # @param day        symbol for the day to create the travel info for
@@ -145,7 +139,7 @@ class HTMLGenerator
         str
     end
     
-    # Created 10/09/2023 by Victor Madelaine
+
     # creates HTML div tag displaying asynchronous classes
     # @return String with HTML <div> tag representing the asynchronous classes of the @schedulToCreate
     private def createAsynchInfo schedule
@@ -160,7 +154,7 @@ class HTMLGenerator
         str
     end
 
-    # Created 10/09/2023 by Landon McElroy
+
     # creates HTML button tag for the next and previous buttons
     # @return |String| with HTML <button> tag representing the next and previous buttons
     private def buttonGenerator schedule
