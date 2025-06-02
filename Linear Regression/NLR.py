@@ -25,18 +25,18 @@ def calc_jacobian(X,p):
     D=p.shape[0]
     J=np.zeros((N,D))
 
-    ### Your job starts here ###
+    
     # Partial derivative w.r.t. a, b, c, d individually
     J[:, 0] = (X**p[1, 0]).flatten()
     J[:, 1] = (p[0, 0] * X**p[1, 0] * np.log(X)).flatten()
     J[:, 2] = X.flatten() 
     J[:, 3] = 1  
 
-    ### Your job ends here ###
+    
 
     return J
 
-GAUSS_NEWTON_ITERATIONS=1000 #PLEASE change your iteration count here
+GAUSS_NEWTON_ITERATIONS=1000 
 def nonlinear_regression_gn(X, Y, initialP):
     """
     Estimate parameters for model function a*(x**b)+c*x+d
@@ -58,7 +58,7 @@ def nonlinear_regression_gn(X, Y, initialP):
 
     p=np.copy(initialP)
 
-    ### Your job starts here ###
+    
 
     for iteration in range(GAUSS_NEWTON_ITERATIONS): #PLEASE do not change this line
         residual = model_function(X, p) - Y  # Difference between prediction and true values
@@ -66,7 +66,7 @@ def nonlinear_regression_gn(X, Y, initialP):
         p_update = np.linalg.inv(J.T @ J) @ J.T @ residual  
         p -= p_update
 
-    ### Your job ends here ###
+    
     return p
 
 GRADIENT_DESCENT_ITERATIONS=100000
@@ -99,7 +99,7 @@ def nonlinear_regression_gd(X, Y, initialP):
         p -= LEARNING_RATE * gradient 
         
     # PLEASE use LEARNING_RATE variable defined above  
-    ### Your job ends here ###
+    
     return p
 
 ##############################################################################
