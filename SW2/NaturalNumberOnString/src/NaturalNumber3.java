@@ -14,7 +14,7 @@ import components.naturalnumber.NaturalNumberSecondary;
  *         else the decimal number whose ordinary depiction is $this.rep]
  * </pre>
  *
- * @authors Trent Jackson & Lucky Katneni
+ * @authors Trent Jackson & Laxman Katneni
  *
  */
 public class NaturalNumber3 extends NaturalNumberSecondary {
@@ -33,7 +33,7 @@ public class NaturalNumber3 extends NaturalNumberSecondary {
      */
     private void createNewRep() {
 
-        // TODO - fill in body
+        
         this.rep = "";
     }
 
@@ -46,7 +46,7 @@ public class NaturalNumber3 extends NaturalNumberSecondary {
      */
     public NaturalNumber3() {
 
-        // TODO - fill in body
+        
         this.createNewRep();
 
     }
@@ -60,7 +60,7 @@ public class NaturalNumber3 extends NaturalNumberSecondary {
     public NaturalNumber3(int i) {
         assert i >= 0 : "Violation of: i >= 0";
 
-        // TODO - fill in body
+        
 
         if (i != 0) {
 
@@ -82,7 +82,7 @@ public class NaturalNumber3 extends NaturalNumberSecondary {
         assert s.matches("0|[1-9]\\d*") : ""
                 + "Violation of: there exists n: NATURAL (s = TO_STRING(n))";
 
-        // TODO - fill in body
+        
         if (!this.rep.equals("0")) {
 
             this.rep = s;
@@ -102,7 +102,7 @@ public class NaturalNumber3 extends NaturalNumberSecondary {
     public NaturalNumber3(NaturalNumber n) {
         assert n != null : "Violation of: n is not null";
 
-        // TODO - fill in body
+        
         if (!n.isZero()) {
             this.copyFrom(n);
         } else {
@@ -154,7 +154,7 @@ public class NaturalNumber3 extends NaturalNumberSecondary {
         assert 0 <= k : "Violation of: 0 <= k";
         assert k < RADIX : "Violation of: k < 10";
 
-        // TODO - fill in body
+        
 
         this.rep += Integer.toString(k);
 
@@ -163,7 +163,7 @@ public class NaturalNumber3 extends NaturalNumberSecondary {
     @Override
     public final int divideBy10() {
 
-        // TODO - fill in body
+        
 
         // This line added just to make the component compilable.
 
@@ -186,7 +186,7 @@ public class NaturalNumber3 extends NaturalNumberSecondary {
     @Override
     public final boolean isZero() {
 
-        // TODO - fill in body
+        
 
         // This line added just to make the component compilable.
 
