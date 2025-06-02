@@ -13,7 +13,7 @@
  * division replaces the bottom operand with the quotient and the top operand
  * with the remainder.
  *
- * @author Bruce W. Weide
+ * @author Laxman Katneni
  *
  */
 public final class NaturalNumberCalculator {
