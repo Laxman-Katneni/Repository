@@ -4,7 +4,7 @@ import components.naturalnumber.NaturalNumber2;
 /**
  * Model class.
  *
- * @author Put your name here
+ * @author Laxman Katneni
  */
 public final class NNCalcModel1 implements NNCalcModel {
 
@@ -24,7 +24,7 @@ public final class NNCalcModel1 implements NNCalcModel {
     @Override
     public NaturalNumber top() {
 
-        // TODO: fill in body
+        
 
         /*
          * This line added just to make the program compilable. Should be
@@ -36,7 +36,7 @@ public final class NNCalcModel1 implements NNCalcModel {
     @Override
     public NaturalNumber bottom() {
 
-        // TODO: fill in body
+        
 
         /*
          * This line added just to make the program compilable. Should be
