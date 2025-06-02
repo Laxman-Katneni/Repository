@@ -1,17 +1,11 @@
-# Created 09/25/2023 by Victor Madelaine
-# Edited 09/26/2023 by Victor Madelaine (implement initialize method and add @day variable)
-# Edited 09/27/2023 by Victor Madelaine (change initialize method to allow for multiple initializations)
-# Edited 09/27/2023 by Khushi Patel (Implemented hash functions)
-# Edited 10/09/2023 by Victor Madelaine (implement asynchronous class initialization)
+# @Team Run-time-terror - Victor Madelaine, Jason Su, Laxman Katneni, Khushi Patel, Landon McElroy
 
 require_relative "Event"
 require_relative "Location"
 require_relative "Schedule"
 
 class ClassOSU 
-    # Created 09/25/2023 by Victor Madelaine
-    # Edited 09/26/2023 by Victor Madelaine (implement initialize method and add @day variable)
-    # Edited 10/09/2023 by Victor Madelaine (implement asynchronous class initialization)
+
     def initialize *args
         if args.length == 3
             # Class object initialization for asynchronous class. 
@@ -81,9 +75,7 @@ class ClassOSU
 
     attr_accessor :className, :classSection, :event, :location, :instructor, :description
       
-    # Created 9/25/2021 by Landon McElroy
-    # Edited 09/27/2023 by Khushi Patel (Implemented)
-    # Edited 09/27/2023 by Khushi Patel (bug fix)
+
     # method used to put classes into a hash map by class number with values from classInfo
     # @param classes array of classes
     # @return classMap hash map of classes
