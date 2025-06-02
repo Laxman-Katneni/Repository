@@ -251,7 +251,7 @@ public final class NNCalcView1 extends JFrame implements NNCalcView {
     @Override
     public void registerObserver(NNCalcController controller) {
 
-        // TODO: fill in body
+        
         this.controller = controller;
 
     }
@@ -259,7 +259,7 @@ public final class NNCalcView1 extends JFrame implements NNCalcView {
     @Override
     public void updateTopDisplay(NaturalNumber n) {
 
-        // TODO: fill in body
+        
         this.tTop.setText(n.toString());
 
     }
@@ -267,7 +267,7 @@ public final class NNCalcView1 extends JFrame implements NNCalcView {
     @Override
     public void updateBottomDisplay(NaturalNumber n) {
 
-        // TODO: fill in body
+        
         this.tBottom.setText(n.toString());
 
     }
@@ -275,7 +275,7 @@ public final class NNCalcView1 extends JFrame implements NNCalcView {
     @Override
     public void updateSubtractAllowed(boolean allowed) {
 
-        // TODO: fill in body
+        
         this.bSubtract.setEnabled(allowed);
 
     }
@@ -283,7 +283,7 @@ public final class NNCalcView1 extends JFrame implements NNCalcView {
     @Override
     public void updateDivideAllowed(boolean allowed) {
 
-        // TODO: fill in body
+        
         this.bDivide.setEnabled(allowed);
 
     }
@@ -291,7 +291,7 @@ public final class NNCalcView1 extends JFrame implements NNCalcView {
     @Override
     public void updatePowerAllowed(boolean allowed) {
 
-        // TODO: fill in body
+        
         this.bPower.setEnabled(allowed);
 
     }
@@ -299,7 +299,7 @@ public final class NNCalcView1 extends JFrame implements NNCalcView {
     @Override
     public void updateRootAllowed(boolean allowed) {
 
-        // TODO: fill in body
+        
         this.bRoot.setEnabled(allowed);
 
     }
