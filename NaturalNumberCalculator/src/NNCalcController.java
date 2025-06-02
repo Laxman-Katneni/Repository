@@ -1,7 +1,7 @@
 /**
  * Controller interface.
  *
- * @author Bruce W. Weide
+ * @author Laxman Katneni
  *
  * @mathmodel <pre>
  * type NNCalcController is modeled by
