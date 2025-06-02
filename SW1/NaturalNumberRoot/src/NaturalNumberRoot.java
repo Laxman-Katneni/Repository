@@ -34,7 +34,7 @@ public final class NaturalNumberRoot {
         assert n != null : "Violation of: n is  not null";
         assert r >= 2 : "Violation of: r >= 2";
 
-        // TODO - fill in body
+        
 
         NaturalNumber one = new NaturalNumber2(1);
         NaturalNumber two = new NaturalNumber2(2);
