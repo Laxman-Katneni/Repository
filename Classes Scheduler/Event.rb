@@ -1,9 +1,4 @@
-# Created 09/27/2023 by Victor Madelaine
-# Edited 09/29/2023 by Laxman Katneni (implement event class - Overlaps)
-# Edited 10/01/2023 by Laxman Katneni (Overlaps Edited and Created TimeParse)
-# Edited 10/01/2023 by Victor Madelaine (implement spaceInBetween)
-# Edited 10/04/2023 by Laxman Katneni (Created formatTime)
-
+# @Authors Victor Madelaine, Laxman Katneni
 class Event 
     def initialize startTime, endTime, days
         @startTime = startTime
