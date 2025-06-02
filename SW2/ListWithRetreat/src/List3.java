@@ -38,7 +38,7 @@ import components.list.ListSecondary;
  *    $this.postFinish.previous])
  * </pre>
  *
- * @author Lucky Katneni and Trent Jackson
+ * @author Laxman Katneni and Trent Jackson
  *
  */
 public class List3<T> extends ListSecondary<T> {
@@ -240,7 +240,7 @@ public class List3<T> extends ListSecondary<T> {
     public final void addRightFront(T x) {
         assert x != null : "Violation of: x is not null";
 
-        // TODO - fill in body
+        
 
         Node newFront = new Node();
         Node previousFront = this.lastLeft.next;
@@ -261,7 +261,7 @@ public class List3<T> extends ListSecondary<T> {
     public final T removeRightFront() {
         assert this.rightLength() > 0 : "Violation of: this.right /= <>";
 
-        // TODO - fill in body
+        
 
         Node previousFront = this.lastLeft.next;
 
@@ -278,7 +278,7 @@ public class List3<T> extends ListSecondary<T> {
     public final void advance() {
         assert this.rightLength() > 0 : "Violation of: this.right /= <>";
 
-        // TODO - fill in body
+        
 
         this.lastLeft = this.lastLeft.next;
         this.leftLength++;
@@ -290,7 +290,7 @@ public class List3<T> extends ListSecondary<T> {
     @Override
     public final void moveToStart() {
 
-        // TODO - fill in body
+        
 
         this.rightLength += this.leftLength;
         this.lastLeft = this.preStart;
@@ -302,7 +302,7 @@ public class List3<T> extends ListSecondary<T> {
     @Override
     public final int leftLength() {
 
-        // TODO - fill in body
+        
 
         assert this.conventionHolds();
         // Fix this line to return the result after checking the convention.
@@ -312,7 +312,7 @@ public class List3<T> extends ListSecondary<T> {
     @Override
     public final int rightLength() {
 
-        // TODO - fill in body
+        
 
         assert this.conventionHolds();
         // Fix this line to return the result after checking the convention.
@@ -380,7 +380,7 @@ public class List3<T> extends ListSecondary<T> {
     @Override
     public final void moveToFinish() {
 
-        // TODO - fill in body
+        
         this.lastLeft = this.postFinish.previous;
         this.leftLength += this.rightLength;
         this.rightLength = 0;
