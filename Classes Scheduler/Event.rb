@@ -1,8 +1,8 @@
 # Created 09/27/2023 by Victor Madelaine
-# Edited 09/29/2023 by Lucky Katneni (implement event class - Overlaps)
-# Edited 10/01/2023 by Lucky Katneni (Overlaps Edited and Created TimeParse)
+# Edited 09/29/2023 by Laxman Katneni (implement event class - Overlaps)
+# Edited 10/01/2023 by Laxman Katneni (Overlaps Edited and Created TimeParse)
 # Edited 10/01/2023 by Victor Madelaine (implement spaceInBetween)
-# Edited 10/04/2023 by Lucky Katneni (Created formatTime)
+# Edited 10/04/2023 by Laxman Katneni (Created formatTime)
 
 class Event 
     def initialize startTime, endTime, days
@@ -15,7 +15,7 @@ class Event
 
     attr_accessor :startTime, :endTime, :startParsed, :endParsed, :days
 
-    # Edited 09/29/2023 by Lucky Katneni (Implemented it)
+    # Edited 09/29/2023 by Laxman Katneni (Implemented it)
     # Checks if self overlaps with the given [event]. returns false if events do not overlap, returns true otherwise
     # @param event Event object to compare to
     # @return Boolean with true if events overlap and false otherwise
@@ -38,7 +38,7 @@ class Event
     end
 
 
-    # Created 10/01/2023 by Lucky Katneni
+    # Created 10/01/2023 by Laxman Katneni
     # Parses the time in HH:MM to minutes from midnight
     # @param time String with the time in HH:MM format
     # @return Integer with the time in minutes from midnight
@@ -49,7 +49,7 @@ class Event
         timeArray[0]*60 + timeArray[1]
     end
 
-    # Created 10/04/2023 by Lucky Katneni
+    # Created 10/04/2023 by Laxman Katneni
     # Returns the time in am/pm format
     # @param time String with the time in HH:MM format
     # @return String with the time in am/pm format
