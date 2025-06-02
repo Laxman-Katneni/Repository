@@ -23,13 +23,13 @@ def linear_regression(X, Y):
     A = np.copy(X) # We're using vectors (rows of X) as inputs values as in slide 24,
                    # so X is literally our A matrix
 
-    ### Your job starts here ###
+
     
     A_T = A.transpose() #Transpose A
 
     p= np.linalg.inv(A_T @ A) @ A_T @ Y #Solve for the parameters, refer to slide 19
 
-    ### Your job ends here ###
+
     return p
 
 def polynomial_regression(X, Y, degree):
@@ -46,11 +46,11 @@ def polynomial_regression(X, Y, degree):
         2. if you want to make this really easy, numpy's "broadcasting" concept will help
     """
 
-    ### Your job starts here ###
+
     
     A= np.hstack([X**i for i in range(degree + 1)]) #Constuct the proper A matrix for a polynomial, refer to slide 22
 
-    ### Your job ends here ###
+
     
     return linear_regression(A,Y) #Once you the have the A matrix pass it along to your linear reg. function
 
