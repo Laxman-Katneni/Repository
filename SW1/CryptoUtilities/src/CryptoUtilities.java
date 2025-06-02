@@ -10,7 +10,7 @@ import components.simplewriter.SimpleWriter1L;
 /**
  * Utilities that could be used with RSA cryptosystems.
  *
- * @LuckyKatneni Put your name here
+ * @LuckyKatneni
  *
  */
 public final class CryptoUtilities {
@@ -110,7 +110,7 @@ public final class CryptoUtilities {
             reduceToGCD(m, n);
         }
 
-        // TODO - fill in body
+       
 
     }
 
@@ -124,7 +124,7 @@ public final class CryptoUtilities {
      */
     public static boolean isEven(NaturalNumber n) {
 
-        // TODO - fill in body
+        
 
         /*
          * This line added just to make the program compilable. Should be
@@ -196,7 +196,7 @@ public final class CryptoUtilities {
             n.copyFrom(nCpy.divide(m));
         }
 
-        // TODO - fill in body
+        
 
     }
 
@@ -224,7 +224,7 @@ public final class CryptoUtilities {
         assert w.compareTo(n) < 0 : "Violation of: w < n - 1";
         n.increment();
 
-        // TODO - fill in body
+        
         NaturalNumber wCpy = w.newInstance();
         NaturalNumber nCpy = n.newInstance();
         NaturalNumber two = new NaturalNumber2(2);
@@ -316,7 +316,7 @@ public final class CryptoUtilities {
          * clause of isWitnessToCompositeness
          */
 
-        // TODO - fill in body
+        
 
         boolean result = true;
 
@@ -362,7 +362,7 @@ public final class CryptoUtilities {
          * the odd numbers only (why?), until n is likely prime
          */
 
-        // TODO - fill in body
+        
         NaturalNumber two = new NaturalNumber2(2);
 
         boolean result = true;
