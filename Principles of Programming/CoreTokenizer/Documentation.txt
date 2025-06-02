@@ -1,0 +1,27 @@
+Core Tokenizer description:
+
+This program is designed to read the given input file which is in the same folder as the code, and break it into tokens, and categorize them as reserved words, integers, identifiers, special symbols and errors
+
+The program is basically divided into two components (main classes):
+
+coreTokenizer.java: This deals with the reading the file, tokenizing and managing the tokens. This also inlcudes methods for handling unrecognized characters, and also handling the special symbols, reserved words, integers and identifiers
+Key Methods:
+tokenizeFile(): Reads through the entire file line by line and tokenizes each line.
+tokenizeLine(): Processes each line character by character and adds tokens to the list.
+addTokenIfNotEmpty(): Adds a token if the current token is not empty.
+addToken(): Adds a new token based on whether it's a reserved word or an identifier.
+
+Token.java: This represents a token with a type and value. It is used to store the tokenized elements of the input file.
+
+User Manual:
+To run this program, open the terminal and compile the code using: javac coreTokenizer.java 
+After that, execute it using: java coreTokenizer input.txt
+
+The program will display the token types for each token in the input file and end with an "End of file reached" message.
+
+Testing
+
+I tested the tokenizer using the sample input text file given in the project description and changed the reserved words to make sure it works properly
+While writing the code, I got wrong output a couple of times, so I wrote some lines of code for debugging to see where I was going wrong, and that code is commented
+
+I didn't find any bugs in this code so far.
