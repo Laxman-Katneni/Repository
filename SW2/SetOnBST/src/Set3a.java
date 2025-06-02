@@ -22,7 +22,7 @@ import components.set.SetSecondary;
  * @convention IS_BST($this.tree)
  * @correspondence this = labels($this.tree)
  *
- * @author Trent Jackson and Lucky Katneni
+ * @author Trent Jackson and Laxman Katneni
  *
  */
 public class Set3a<T extends Comparable<T>> extends SetSecondary<T> {
@@ -54,7 +54,7 @@ public class Set3a<T extends Comparable<T>> extends SetSecondary<T> {
         assert t != null : "Violation of: t is not null";
         assert x != null : "Violation of: x is not null";
 
-        // TODO - fill in body
+        
 
         boolean result = false;
 
@@ -102,7 +102,7 @@ public class Set3a<T extends Comparable<T>> extends SetSecondary<T> {
         assert t != null : "Violation of: t is not null";
         assert x != null : "Violation of: x is not null";
 
-        // TODO - fill in body
+        
         BinaryTree<T> left = t.newInstance();
         BinaryTree<T> right = t.newInstance();
 
@@ -143,7 +143,7 @@ public class Set3a<T extends Comparable<T>> extends SetSecondary<T> {
         assert t != null : "Violation of: t is not null";
         assert t.size() > 0 : "Violation of: |t| > 0";
 
-        // TODO - fill in body
+        
         BinaryTree<T> left = t.newInstance();
         BinaryTree<T> right = t.newInstance();
 
@@ -190,7 +190,7 @@ public class Set3a<T extends Comparable<T>> extends SetSecondary<T> {
         assert x != null : "Violation of: x is not null";
         assert t.size() > 0 : "Violation of: x is in labels(t)";
 
-        // TODO - fill in body
+        
         BinaryTree<T> left = t.newInstance();
         BinaryTree<T> right = t.newInstance();
 
