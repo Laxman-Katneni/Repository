@@ -1,9 +1,4 @@
-# Created 09/27/2023 by Victor Madelaine
-# Edited 09/29/2023 by Lucky Katneni (Implementing all the location and distance methods)
-# Edited 10/01/2023 by Lucky Katneni (Debugging methods)
-# Edited 10/06/2023 by Victor Madelaine (implement walkingTime, bikingTime and drivingTime)
-# Edited 10/09/2023 by Victor Madelaine (round answers from walkingTime, bikingTime and drivingTime for ease of display)
-# Edited 10/11/2023 by Victor Madelaine (optimize finding coordinates for buildings)
+# @author Victor Madelaine & Laxman Katneni
 
 require 'geocoder'
 
