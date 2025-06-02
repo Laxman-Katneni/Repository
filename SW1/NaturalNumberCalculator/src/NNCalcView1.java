@@ -14,7 +14,7 @@ import components.naturalnumber.NaturalNumber;
 /**
  * View class.
  *
- * @author Put your name here
+ * @author Laxman Katneni
  */
 public final class NNCalcView1 extends JFrame implements NNCalcView {
 
