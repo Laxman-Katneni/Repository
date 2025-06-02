@@ -8,7 +8,7 @@ import components.simplewriter.SimpleWriter1L;
 /**
  * Utility class to support string reassembly from fragments.
  *
- * @author Put your name here
+ * @author Laxman Katneni
  *
  * @mathdefinitions <pre>
  *
