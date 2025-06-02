@@ -1,0 +1,63 @@
+---
+title: Media and Press
+layout: layout
+---
+<!-- Created 10/21/2023 by Lucky Katneni -->
+
+<main class = "media-main">
+    <section class="media-press">
+            <h2>Media Presence</h2>
+            <!-- A list of media Presences in a grid -->
+            <div class="media-grid">
+                <ul class="media-list">
+                    <li class="media-header">
+                        <span class="media-source-header">Source</span>
+                        <span class="media-title-header">Title/Description</span>
+                        <span class="media-date-header">Date</span>
+                    </li>
+                    <!-- Each item represents a media presence -->
+                    <% data.mediaPresence.each do |media| %>
+                            <li class="media-row">
+                                <span class="media-source"><%= media.source %></span>
+                                <span class="media-title"><%= media.title %></span>
+                                <span class="media-date"><%= media.date %></span>
+                            </li>
+                    <% end %>
+                </ul>
+            </div>
+
+
+            <!-- Print section -->
+            <h2>Print:</h2>
+            <!-- List showing print mentions -->
+            <ul>
+                <!-- Each item represents a print mention -->
+                <li><b>StateTech Magazine:</b> "DHS Researches Overcoming Occlusions in Video Surveillance for Public Safety," August 1, 2022 [WWW]</li>
+                <li><b>Security Dealer & Integrator:</b> "Eye on Troublesome Patterns," May 25, 2011 </li>
+                <li><b>Popular Mechanics:</b> "PM's Guide to the Best in Home Surveillance Gear," April 6, 2011 <a href = "https://www.popularmechanics.com/technology/gadgets/reviews/a6546/pms-guide-to-the-best-in-home-surveillance-gear/" target = "_blank">[WWW]</a></li>
+                <li><b>The Why Files: the Science Behind the News:</b> "Video Surveillance: Who is Watching You, and Why," March 11, 2010 [WWW]</li>
+                <li><b>Electrical Contractor magazine:</b> "Surveillance with Smarts," February 2010, p. 50</li>
+                <li><b>OSU Alumni Magazine, Research Report Article:</b> "Eye in the Sky", May/June, 2009, page 30 </li>
+                <li><b>OSU News In Engineering Research Update article:</b> "Intelligent Surveillance Could Aid Law Enforcement", Vol. 81, No. 1, 2009 </li>
+                <li><b>SPIE Newsroom: Electronic Imaging & Signal Processing:</b> "A Feature-Selection Approach to Fusing Electro-Optical and IR Imagery," February 25, 2009, <a href="https://web.cse.ohio-state.edu/~davis.1719/Publications/SPIE09.pdf" target="_blank">[PDF]</a>, <a href="http://spie.org/x33833.xml?highlight=x2410&ArticleID=x33833" target="_blank">[WWW]</a></li>
+                <li><b>Photonics Spectra, Tech News:</b> "Neighborhood Watch, Sans Neighbors," February 2009, pp. 18-20 </li>
+                <li><b>MSNBC, Technology & Science:</b> "Computer has eye for Suspicious Behavior," January 26, 2009</li>
+                <li><b>Columbus Dispatch:</b> "Computers Might Spot People up to no Good," January 24, 2009</li>
+                <li><b>onCampus, Discovery Briefs:</b> "'Smart' Surveillance System May Tag Suspicious or Lost People," January 8, 2009</li>
+                <li><b>UWeekly:</b> "Big Brother No, Smart Camera Yes," February 18, 2009 </li>
+                <li><b>The Lantern:</b> "Under Surveillance," January 27, 2009 </li>
+                <li><b>The Lantern:</b> "'Smart' Cameras are Watching You," January 9, 2009 </li>
+                <li><b>OSU News Release:</b> "'Smart' Surveillance System May Tag Suspicious or Lost People," released 12/08 </li>
+                <li><b>The Economist, Science & Technology section:</b> "Surveillance Technology: If Looks Could Kill," October 23, 2008 </li>
+                <li><b>OSU CSE Newsletter, Focus on Research Article:</b> "Jim Davis: Vision for the Future of Surveillance," Autumn 2007, pages 2-3 </li>
+                <li><b>OSU Alumni Magazine, Research Report Article:</b> "Watch the Hands and Face," May/June, 2005, page 8 </li>
+                <li><b>OSU News In Engineering Research Update article:</b> "Advancing Technologies for Internet Video," Vol. 77, No. 1, Spring 2005 </li>
+                <li><b>ACM TechNews Feature:</b> "Researchers Find Way to Make Internet Video More Appealing," Vol. 6, Issue 734, December 22, 2004 </li>
+                <li><b>OSU News Release:</b> "Researchers find way to make internet video more appealing," released 12/21/04</li>
+                <li><b>Homeland Security & Defense:</b> "HSARPA seeking video software technology to interpret complex surveillance stream," Vol. 3, No. 16, April 21, 2004 </li>
+                <li><b>Columbus Business First, Tech Now feature article:</b> "Hot on Surveillance: Thermal technology grows in popularity, importance in post-911 world," Vol. 20, No. 7, Oct. 17, 2003</li>
+            </ul>
+
+           
+    </section>
+</main>

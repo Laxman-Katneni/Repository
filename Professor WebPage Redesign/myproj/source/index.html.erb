@@ -1,0 +1,34 @@
+---
+title: James W. Davis
+layout: layout
+---
+<!-- 10/18 Liam created index.html.erb -->
+<!-- 10/22 Liam edited file. Added styles. -->
+<!-- 10/24 Liam edited file. Moved data into .yml file and added imports to extract it. Changed some styles -->
+<!-- James Davis' OSU page Home -->
+<main id="home">
+    <section>
+        <!-- Introduction section -->
+        <!-- Data is stored in data/bio.yml allows for easy editing. -->
+        <hgroup class="teach_pub_head">
+            <h1><%= data.bio.nametitle %></h1>
+            <p><%= data.bio.tagline %></p>
+        </hgroup>
+        <img id="JimDavisPortrait" src="<%= data.bio.images.portrait %>" alt="Jim Davis' Portrait" class="medium"/>
+        <%= partial "officeaddress" %>
+        <h2 class="alert">
+            <% data.bio.announcements%>
+        </h2>
+    </section>
+    <section>
+        <h3>Introduction</h3>
+        <p><%= data.bio.bio %></p>
+        <h3>Education</h3>
+            <ul>
+                <!-- Get all education and put each into an <li> element -->
+                <% data.bio.education.each do |school| %>
+                <li><%= school %></li>
+                <% end %>
+            </ul>
+    </section>
+</main>

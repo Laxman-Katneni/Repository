@@ -1,0 +1,61 @@
+  /*File Created on 10/22/23 by James Fitzgerald
+  Holds CSS elements to be used by the Awards and Accolades page
+  */
+
+  // Created on 10/24/23 by James Fitzgerald
+  // Modifies award and accolade header classes
+  .awardHeader, .accoladeHeader{
+    font-family: Arial, sans-serif;
+    margin-top:30px;
+    margin-bottom: 20px;
+    color: #8F1001;
+    text-align: center;
+  }
+ 
+// Created on 10/22/23 by James Fitzgerald
+// Functions as the general grid setup
+// Edited on 10/24/23 by James Fitzgerald: Established grid size, Ensures borders collapse into each other.
+  .grid-container {
+    grid-template-columns: 100px auto;
+    display: inline-grid;
+    border: 1px solid black;
+    border-collapse: collapse;
+  }
+
+// Created on 10/22/23 by James Fitzgerald
+// Modifies both year and award class elements
+// Edited on 10/24/23 by James Fitzgerald: Added padding
+  .year, .award {
+    color: black;
+    outline: 1px solid black;
+  }
+// Created on 10/22/23 by James Fitzgerald
+// Modifies year class elements to be center aligned and restricted to column 1 
+  .year{
+    grid-column-start:1;
+    grid-column-end:1;
+    text-align: center;
+  }
+
+  .accolade{
+    border: 1px solid black;
+    grid-column-start:2;
+    grid-column-end:2;
+    padding: 10px;
+  }
+  
+  
+// Created on 10/22/23 by James Fitzgerald
+// Modifies year class elements to only be in column 2
+  .award{
+    grid-column-start:2;
+    grid-column-end:2;
+  }
+// Created on 10/22/23 by James Fitzgerald
+// Modifies year p elements so that multiple rows appear in awards table with one year
+  .award p{
+    padding: 5px;
+    border: 1px solid black;
+    border-collapse: collapse;
+  }
+

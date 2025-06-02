@@ -1,0 +1,20 @@
+---
+title: Teaching
+layout: layout
+---
+<!-- File Created on 10/18/2023 by Ethan Chung -->
+<!-- Edited on 10/24/2023 by Ethan Chung: Changed styling from table to grid-->
+<!DOCTYPE html>
+
+<main id="teaching">
+  <h2 class="teach_pub_head"> Classes Taught </h1>
+  <div class="teach_pub_grid_container">
+  <% data.teaching.each do |entry| %>
+      <div class="teach_year"><%= entry['year'] %></div>
+      <% entry['classes'].each do |class_entry| %>
+        <div class="teach_class"><%= class_entry['class'] %></div>
+      <% end %>
+      <br></br>
+  <% end %>
+  </div>
+</main>

@@ -1,0 +1,17 @@
+---
+title: Publications
+layout: layout
+---
+<!-- File Created on 10/18/2023 by Ethan Chung -->
+<!-- Edited on 10/24/2023 by Ethan Chung: Changed styling from table to grid-->
+<!DOCTYPE html>
+
+<main id="publications">
+  <h2 class="teach_pub_head"> Publications </h2>
+  <% data.publications.each do |entry| %>
+      <div id="publication"><%= entry['title'] %></div>
+      <div id="publication"><%= entry['authors'] %></div>
+      <div id="publication"><%= entry['publication'] %></div>
+      <br></br>
+  <% end %>
+</main>

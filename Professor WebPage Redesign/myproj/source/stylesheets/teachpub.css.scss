@@ -1,0 +1,23 @@
+/* Created by Ethan Chung on 10/24/23. */
+
+.teach_pub_head {
+    border-bottom: 2px solid #333;
+    padding-bottom: 5px;
+}
+
+.teach_pub_grid_container {
+    grid-template-columns: 100px 900px;
+    display: inline-grid;
+    border-collapse: collapse;
+}
+
+.teach_year {
+    font-weight: bold;
+    grid-column-start:1;
+    text-align: center;
+}
+
+.teach_class {
+    grid-column-start:2;
+    grid-column-end:2;
+}

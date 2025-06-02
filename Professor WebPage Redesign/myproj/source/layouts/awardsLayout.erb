@@ -1,0 +1,28 @@
+<!DOCTYPE html <%= stylesheet_link_tag "awards"%>
+    
+    <%= javascript_include_tag "awards" %>>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <!-- Use the title from a page's frontmatter if it has one -->
+    <title><%= current_page.data.title || "Jim Davis" %></title>
+    <link rel="stylesheet" href="../stylesheets/normalize.css">
+
+    <!-- 10/22 Liam - Added css link statements for all styles files. -->
+    <%= stylesheet_link_tag "site" %>
+   
+    <!-- Tried adding this to get my css to load, but didnt work... leaving it here incase its useful later -->
+    <!--
+    <link rel="stylesheet" href="stylesheets/all.css">
+    -->
+  </head>
+  <body>
+    <!-- 10/19 Liam added navbar -->
+    <!-- Loads a template for the navigation bar that will go at the top of every page using "layout" layout -->
+    <%= partial "navbar" %>
+    <%= yield %>
+  </body>
+</html>

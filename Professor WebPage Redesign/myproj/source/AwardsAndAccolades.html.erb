@@ -1,0 +1,45 @@
+---
+title: Awards and Accolades
+layout: layout
+---
+<!--File Created on 10/18/2023 by James Fitzgerald-->
+<!--Displays Professor Davis' Awards and Professional Accomplishments-->
+<!--Edited by James Fitzgerald on 10/19/23: Reworked into html.erb file-->
+<!--Edited by James Fitzgerald on 10/22/23: Reworked to use for-each loop-->
+<!--Edited by James Fitzgerald on 10/24/23: Reworked for CSS implementation-->
+
+<header>
+  <h1> My Awards and Accolades </h1>
+</header>
+
+<h1 class="awardHeader"> Awards</h1>
+
+<!--Created by James Fitzgerald on 10/22/23-->
+<!-- Prints the awards of Jim Davis-->
+<!--Edited by James Fitzgerald on 10/24/23: put div around each loop-->
+<div class="grid-container">
+<% data.awards.each do |year| %>
+  <div class="year"><%= year[0] %></div>
+    <!--Multiple awards will be placed next to a single box for the year-->
+  <div class="award">
+  <% for a in 0...year[1].size %>
+  <p><%= year[1][a] %></p>
+    <% end %>
+     </div>
+  <% end %>
+</div>
+
+<!--Created by James Fitzgerald on 10/22/23-->
+<!-- Prints the awards of Jim Davis in a table-->
+<!--Edited by James Fitzgerald on 10/24/23: put div around each loop-->
+
+<h1 class="accoladeHeader"> Professional Accolades </h1>
+<div class="grid-container">
+<% data.accolades.each do |year| %>
+  <% for a in 0...year[1].size %>
+ <!--prints accolade next to year it happened-->
+  <div class="year"><%= year[0] %></div>
+  <p class="accolade"><%= year[1][a] %></p>
+    <% end %>
+  <% end %>
+</div>

@@ -1,0 +1,188 @@
+/* 10/22 Liam Added Styles */
+/* 10/24 Liam added more styles for footer and home page
+    Removed styles for tables and .sidebar*/
+
+.content {
+  margin-top: 50px; /* Adjust this value based on your navbar's height */
+}
+
+html, body, div, span, p, a, img, ul, li {
+  margin: 0;
+  padding: 0;
+  border: 0;
+}
+
+main#home {
+  margin: 5% 10%;
+}
+
+#teaching, #publications {
+  margin: 2.5% 5%;
+}
+
+body {
+  background-color: rgb(219, 213, 213);
+  color: black;
+  font-family: -apple-system, BlinkMacSystemFont, "Avenir Next", "Avenir",
+    "Segoe UI", "Lucida Grande", "Helvetica Neue", "Helvetica", "Fira Sans",
+    "Roboto", "Noto", "Droid Sans", "Cantarell", "Oxygen", "Ubuntu",
+    "Franklin Gothic Medium", "Century Gothic", "Liberation Sans", sans-serif;
+}
+
+.alert {
+  color: rgb(182, 0, 0);
+  font:bold;
+  font-size: large;
+}
+
+address {
+  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+
+
+/* Quick formatting */
+
+.center {
+  text-align: center;
+}
+
+.on-top {
+  z-index: 1;
+}
+
+.nowrap {
+  white-space: nowrap;
+}
+
+.preline {
+  white-space: pre-line;
+}
+
+.multiline { /* wraps text, does not remove typed newlines */
+  white-space: pre-wrap;
+}
+
+.red-bg {
+  background-color: #8F1001;
+}
+
+/* Image styles */
+
+img {
+  border-top: 10px;
+  border-radius: 30px; /* Rounded corners */
+  border-color: black;
+}
+
+img.medium {
+  top:0;
+  margin:5%;
+  max-width: 40%;
+  max-height: 25%;
+  float:right;
+}
+
+
+/* Styles from professionalHistory.css */
+/* Created by Kaushik Jegath on 10/19/23 */
+
+header, footer {
+  position: relative;
+  width: 100%;
+  padding: 1em 0;
+  display: inline-block;
+  justify-content: center;
+  background-color: #8F1001;
+  color: white;
+}
+
+header {
+  top: 0;
+}
+
+footer {
+  bottom: 0;
+}
+
+.flexbox {
+  display: inline-flex;
+  justify-content:space-evenly;
+  width:100%
+
+}
+
+footer#footer a {
+  color: white;
+}
+
+/* Anchor Links */
+
+a:link, :visited {
+  color: rgb(36, 36, 76);
+}
+
+a:hover {
+  text-decoration: underline;
+}
+// Styles from styles.css created by Lucky Katneni
+// Edited 10/24/203 by Lucky Katneni ( Added all the media css)
+.media-body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+}
+
+
+nav ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  justify-content: center;
+}
+
+
+.media-main {
+  padding: 2em;
+}
+
+.media-press h2 {
+  border-bottom: 2px solid #333;
+  padding-bottom: 5px;
+}
+
+.media-press ul {
+  margin-top: 1em;
+}
+
+// Grid styles
+.media-grid {
+  border: 1px solid #ccc;
+  width: 100%;
+}
+
+.media-list {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+}
+
+.media-header, .media-row {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 10px;
+  padding: 5px;
+}
+
+.media-header {
+  font-weight: bold;
+}
+
+.media-row {
+  border-top: 1px solid #ccc;
+}
+
+.media-source, .media-title, .media-date,
+.media-source-header, .media-title-header, .media-date-header {
+  padding: 5px;
+}
+

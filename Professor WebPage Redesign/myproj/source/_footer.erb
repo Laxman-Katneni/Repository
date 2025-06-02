@@ -1,0 +1,26 @@
+<!-- 10/22 Liam Created _footer.erb -->
+<!-- 10/24 Liam imported contact info made by James into footer -->
+<!-- 10/24 Liam edited footer formatting - content is now horizontal and flexbox'ed -->
+<footer id="footer">
+    <div id="footerflex" class="flexbox">
+        <!-- Jim Davis Contact info (created by James) -->
+        <div>
+            <h3>Contact Information</h3>
+            <div><%= data.bio.nametitle %></div>
+            <div></div>
+            <div>davis.1719@osu.edu</div>
+            <div><a href="http://www.cse.ohio-state.edu/~jwdavis" target="_blank">http://www.cse.ohio-state.edu/~jwdavis</a></div>
+        </div>
+
+        <!-- Jim Davis office location -->
+        <div>
+            <h3>Office Location</h3>
+            <%= partial "officeaddress" %>
+        </div>
+
+        <!-- Google maps embed of area around dreese labs -->
+        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3056.27419064865!2d-83.01848612290335!3d40.00232257150914!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x88388e96732423c1%3A0xc18a2f8aed8d8b53!2sDreese%20Lab!5e0!3m2!1sen!2sus!4v1697747156057!5m2!1sen!2sus"
+            width="25%" height="initial" style="border:0;" allowfullscreen="" loading="lazy"
+            referrerpolicy="no-referrer-when-downgrade"></iframe>
+    </div>
+<footer>

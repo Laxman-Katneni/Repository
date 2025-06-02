@@ -1,0 +1,23 @@
+/* Created by Kaushik Jegath on 10/24/23. */
+.timeline {
+    display: flex;
+    align-items: center;
+}
+
+.timelineThread {
+    width: 2px;
+    height: 100%;
+    background-color: white;
+    margin-left: 10px;
+    margin-right: 10px;
+}
+
+#years {
+    font-size: 15px;
+    color: black;
+}
+
+#role, #org {
+    font-size: 13px;
+    color: black;
+}

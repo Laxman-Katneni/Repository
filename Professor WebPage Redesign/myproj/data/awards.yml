@@ -1,0 +1,21 @@
+#File Created by James Fitzgerald
+#Holds information on awards by year
+#Edited By James Fitzgerald on 10/24/2023: Reordered into earliest-latest
+ 2002:
+  - "2002 Lockheed-Martin Best Paper Award: \"A Three-Mode Expressive Feature Model of Action Effort\",<em> IEEE Workshop on Motion and Video Computing </em>, Dec. 5-6, 2002, pp. 139-144"
+ 2003:
+    - "2003 NSF Career Award"
+ 2005:
+    - "SU College of Engineering Lumley Research Award"
+ 2010:
+    - "Best Paper Award: \"Attention-based Target Localization using Multiple Instance Learning\", <em>International Symposium on Visual Computing</em>, November 2010"   
+    - "IEEE Computer Vision and Pattern Recognition Reviewer Award"
+    - "2009-2010 CSE Teaching Award"
+ 2012:
+    - "OSU College of Engineering Lumley Research Award"
+ 2015:
+    - "2015 OSU College of Engineering Innovators Award"
+ 2019:
+    - "Lutron Electronic's Ruth and Joel Spira Teaching Award"
+ 2022: 
+    - "Best Paper Award: \"Learning When to Say 'I Don't Know'\", <em>International Symposium on Visual Computing</em>, October 2022"
