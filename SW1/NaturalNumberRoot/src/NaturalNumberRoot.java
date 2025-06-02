@@ -7,7 +7,7 @@ import components.simplewriter.SimpleWriter1L;
  * Program with implementation of {@code NaturalNumber} secondary operation
  * {@code root} implemented as static method.
  *
- * @author Lucky Katneni
+ * @author Laxman Katneni
  *
  */
 public final class NaturalNumberRoot {
