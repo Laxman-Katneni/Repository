@@ -9,7 +9,7 @@ import components.xmltree.XMLTree1;
 /**
  * Program to evaluate XMLTree expressions of {@code int}.
  *
- * @author Lucky Katneni
+ * @author Laxman Katneni
  *
  */
 public final class XMLTreeIntExpressionEvaluator {
@@ -35,7 +35,7 @@ public final class XMLTreeIntExpressionEvaluator {
     private static int evaluate(XMLTree exp) {
         assert exp != null : "Violation of: exp is not null";
 
-        // TODO - fill in body
+        
 
         /*
          * This line added just to make the program compilable. Should be
