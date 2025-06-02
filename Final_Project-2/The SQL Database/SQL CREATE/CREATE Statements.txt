@@ -1,0 +1,155 @@
+--*************** BOOK table creation with index*****************
+create table Book
+(
+    ISBN             varchar(20) not null
+        constraint ISBNBook_pk
+            primary key,
+    Title            varchar(30) not null,
+    Price            REAL        not null,
+    Genre            varchar(30),
+    Publication_Year integer     not null,
+    Publisher        varchar(40),
+    Number_In_Stock  INTEGER default 1
+);
+
+create index Book_Genre_Idx
+    on Book (Genre);
+
+--************************** Book_Author table creation with index******************
+
+create table Book_Author
+(
+    ISBN integer     not null
+        constraint ISBN___fk
+            references Book ("")
+            on update cascade on delete set null,
+    Name varchar(40) not null,
+    constraint Book_Author_pk
+        primary key (ISBN, Name)
+);
+
+create index Book_Author_Idx
+    on Book_Author (Name);
+
+--********************************Customer table creation********************************
+
+create table Customer
+(
+    Customer_ID    integer     null on conflict fail
+        constraint Customer_ID
+            primary key,
+    Fname          varchar(15) not null,
+    Lname          varchar(15) not null,
+    Street_Address varchar(30),
+    City           varchar(20),
+    State          varchar(15),
+    Zip            integer,
+    Email          varchar(80) not null,
+    Phone_Number   integer,
+    Password       varchar(30) not null
+);
+
+--********************************Employee table creation***************************
+
+create table Employee
+(
+    Employee_Number integer     not null
+        constraint Employee_Number
+            primary key,
+    Fname           varchar(15) not null,
+    Lname           varchar(15) not null,
+    Street_Address  varchar(40),
+    City            varchar(30),
+    State           varchar(15),
+    Zip             integer,
+    Email           varchar(40) not null,
+    Phone_Number    integer,
+    Salary          integer     not null,
+    Title           varchar(30) not null,
+    Hire_Date       integer     not null,
+    Password        varchar(30) not null
+);
+
+--**************************Promotions table creation**************************
+
+create table Promotions
+(
+    Promotion_ID    integer     not null
+        constraint Promotion_ID
+            primary key,
+    ISBN            varchar(30) not null
+        constraint ISBN___fk
+            references Book
+            on update cascade on delete set null,
+    Discount        REAL        not null,
+    Begin_Date      Integer     not null,
+    End_Date        integer     not null,
+    Employee_Number integer     not null
+        constraint Employee_Number___fk
+            references Employee
+            on update cascade on delete set null
+);
+
+--*************************Sale table creation********************************
+
+create table Sale
+(
+    Sale_ID            integer     not null
+        constraint Sale_ID
+            primary key,
+    Date               integer     not null,
+    Credit_Card_Number varchar(30) not null,
+    Customer_ID        integer     not null
+        constraint Customer_ID___fk
+            references Customer
+            on update cascade on delete set null
+);
+
+--*******************************Book_Sold table creation and index*************************
+
+create table Book_Sold
+(
+    Sale_ID  integer     not null
+        constraint Sale_ID___fk
+            references Sale
+            on update cascade on delete set null,
+    ISBN     varchar(30) not null
+        constraint ISBN___fk
+            references Book
+            on update cascade on delete set null,
+    Quantity integer     not null,
+    constraint Book_Sold
+        primary key (Sale_ID, ISBN)
+);
+
+create index Book_Sold_Idx
+    on Book_Sold (ISBN);
+
+--*******************************Views creation****************************************
+
+CREATE VIEW Active_Promotions AS
+SELECT p.Promotion_ID, b.Title, p.Discount, p.Begin_Date, p.End_Date
+FROM Promotions p
+JOIN Book b ON p.ISBN = b.ISBN
+WHERE p.End_Date >= 20230426 AND p.Begin_Date <= 20230426;
+
+CREATE VIEW Top_Customers AS
+SELECT c.Fname, c.Lname, c.Customer_ID, COUNT(*) AS Total_Purchases
+FROM Customer c
+JOIN Sale s ON c.Customer_ID = s.Customer_ID
+GROUP BY c.Customer_ID
+ORDER BY Total_Purchases DESC;
+
+CREATE VIEW book_revenue AS
+SELECT bs.ISBN, b.Title, SUM(bs.Quantity) AS Total_Sold, SUM(bs.Quantity * b.Price) AS Total_Revenue
+FROM Book_Sold bs
+JOIN Book b ON bs.ISBN = b.ISBN
+GROUP BY bs.ISBN
+ORDER BY Total_Revenue DESC;
+
+CREATE VIEW employee_promotions AS
+SELECT e.Fname, e.Lname, COUNT(p.Promotion_ID) AS Total_Promotions
+FROM Employee e
+LEFT JOIN Promotions p ON e.Employee_Number = p.Employee_Number
+GROUP BY e.Fname, e.Lname;
+

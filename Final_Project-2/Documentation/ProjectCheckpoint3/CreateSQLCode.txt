@@ -1,0 +1,105 @@
+create table Book
+(
+    ISBN             varchar(20) not null
+        constraint ISBNBook_pk
+            primary key,
+    Title            varchar(30) not null,
+    Price            REAL        not null,
+    Genre            varchar(30),
+    Publication_Year integer     not null,
+    Publisher        varchar(40)
+);
+
+create table Book_Author
+(
+    ISBN integer     not null
+        constraint ISBN___fk
+            references Book ("")
+            on update cascade on delete set null,
+    Name varchar(40) not null,
+    constraint Book_Author_pk
+        primary key (ISBN, Name)
+);
+
+
+create table Book_Sold
+(
+    Sale_ID  integer     not null
+        constraint Sale_ID___fk
+            references Sale
+            on update cascade on delete set null,
+    ISBN     varchar(30) not null
+        constraint ISBN___fk
+            references Book
+            on update cascade on delete set null,
+    Quantity integer     not null,
+    constraint Book_Sold
+        primary key (Sale_ID, ISBN)
+);
+
+create table Customer
+(
+    Customer_ID    integer     null on conflict fail
+        constraint Customer_ID
+            primary key,
+    Fname          varchar(15) not null,
+    Lname          varchar(15) not null,
+    Street_Address varchar(30),
+    City           varchar(20),
+    State          varchar(15),
+    Zip            integer,
+    Email          varchar(80) not null,
+    Phone_Number   integer,
+    Password       varchar(30) not null
+);
+
+create table Employee
+(
+    Employee_Number integer     not null
+        constraint Employee_Number
+            primary key,
+    Fname           varchar(15) not null,
+    Lname           varchar(15) not null,
+    Street_Address  varchar(40),
+    City            varchar(30),
+    State           varchar(15),
+    Zip             integer,
+    Email           varchar(40) not null,
+    Phone_Number    integer,
+    Salary          integer     not null,
+    Title           varchar(30) not null,
+    Hire_Date       integer     not null,
+    Password        varchar(30) not null
+);
+
+create table Promotions
+(
+    Promotion_ID    integer     not null
+        constraint Promotion_ID
+            primary key,
+    ISBN            varchar(30) not null
+        constraint ISBN___fk
+            references Book
+            on update cascade on delete set null,
+    Discount        REAL        not null,
+    Begin_Date      Integer     not null,
+    End_Date        integer     not null,
+    Employee_Number integer     not null
+        constraint Employee_Number___fk
+            references Employee
+            on update cascade on delete set null
+);
+
+create table Sale
+(
+    Sale_ID            integer     not null
+        constraint Sale_ID
+            primary key,
+    Date               integer     not null,
+    Credit_Card_Number varchar(30) not null,
+    Customer_ID        integer     not null
+        constraint Customer_ID___fk
+            references Customer
+            on update cascade on delete set null
+);
+

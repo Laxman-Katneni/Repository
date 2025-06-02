@@ -1,0 +1,162 @@
+1. A query that counts the number of books in the system by each publisher.
+
+Publisher_IDℱ Name, COUNT ISBN (Book * Publisher)
+
+SELECT Publisher, COUNT(Book.ISBN) AS Book_Count 
+FROM Book GROUP BY Publisher
+
+Expected Output:
+Addison-Wesley Pub Co,1
+Addison-Wesley Publishing,2
+Anchor Books,4
+Back Bay Books,1
+Ballantine Books,1
+Ballantine Books ,2
+Berkley Pub Group,1
+Clarkson N. Potter,1
+Crown Pub,1
+Del Rey,1
+Dell Pub Co,1
+"Donald M. Grant Publisher, Inc.",1
+Doubleday,1
+Fireside,1
+Gibbs Smith Publisher,2
+Harlequin,2
+Harper,6
+HarperCollins,1
+Harperperennial Library,1
+Harvard Univ Pr,1
+Harvest Books,1
+John Wiley & Sons,6
+Jossey-Bass,1
+Knopf,1
+Lark Books,1
+Little Brown & Company,2
+MIT Press,3
+Macromedia Press,1
+McGraw-Hill Osborne Media,3
+McGraw-Hill Trade,1
+McGraw-Hill/Irwin,2
+Morgan Kaufmann,2
+Multnomah Publishers Inc.,1
+New Riders Publishing,3
+O'Reilly & Associates,2
+Pantheon Books,1
+Penguin USA ,2
+Perennial,3
+Perseus Publishing,1
+Picador,2
+Pocket Books,4
+Prentice Hall,1
+Prentice Hall PTR,1
+Putnam Pub Group,2
+Random House,2
+Random House Trade Paperbacks,1
+"Schmidt Ink, Inc.",1
+Scribner,1
+Scribner Paperback Fiction,1
+Silhouette,1
+Simon & Schuster,2
+South-Western College Pub,2
+St. Martin's Press,2
+Sybex,2
+Taunton Pr,3
+Vendome Pr,1
+Viking Press,1
+Vintage Books,1
+W.W. Norton & Company,2
+Warner Books,4
+"Wolfram Media, Inc.",1
+Wrox Press Inc,1
+
+
+
+2. A query that counts how many promotions an employee has created.
+
+Employee_Numberℱ Name, COUNT Promotion_ID (Employee * Promotion)
+
+SELECT Fname, Lname, COUNT(p.Promotion_ID) AS Number_Of_Promotions
+FROM Employee e
+    JOIN Promotions p on e.Employee_Number = p.Employee_Number
+GROUP BY e.Employee_Number
+
+Expected Output:
+Paula,Barrett,2
+Ivan,Simpson,1
+Urielle,Hays,2
+Armando,Wilkins,3
+Phoebe,Mullen,3
+Darius,Sampson,1
+Palmer,Turner,1
+Xena,Dodson,2
+Irma,Huber,2
+Madison,Cannon,2
+
+
+
+
+3. A query that finds the total number of times each book has been sold.
+
+ISBNℱ Title, SUM Quantity (Sale * Book)
+
+SELECT Title, SUM(Quantity) AS Total_Sold
+FROM Book_Sold bs
+    JOIN Book b on b.ISBN = bs.ISBN
+GROUP BY b.ISBN
+
+Expected Output:
+Atonement,2
+On Human Nature,2
+Consilience: The Unity of Know,1
+Real World FPGA Design with Ve,2
+White Noise ,1
+The Magician's Assistant,2
+The Complete Illustrated Guide,1
+A New Kind of Science,1
+Choosing & Using Hand Tools,2
+The Rescuer: The O'Malley Seri,1
+Professional SQL Server 2000 P,1
+Financial Modeling ,1
+Econometric Analysis of Cross ,2
+Numerical Techniques in Financ,1
+The Hours,2
+Lucky: A Memoir,2
+The Jester,1
+The Lovely Bones: A Novel,1
+ColdFusion MX Web Application ,1
+Introductory Econometrics: A M,6
+Pale Blue Dot: A Vision of the,1
+The Vampire's Violin,1
+Engaging The Enemy,3
+Love By Design,1
+Letters to Kelly,1
+House of Leaves,3
+Enduring Love,1
+Amsterdam,1
+Lullaby: A Novel,1
+How the Mind Works,1
+The Dark Highlander,1
+Message in a Bottle,2
+A Walk to Remember,5
+The Notebook,1
+The Data Warehouse Toolkit: Th,2
+A Visual Dictionary of Archite,1
+Beyond Coso : Internal Control,3
+Patron Saint of Liars,1
+Bel Canto: A Novel,1
+Words and Rules: The Ingredien,1
+Pyramids,1
+Twelve Times Blessed,1
+Contact,5
+The Future of Life,1
+ON FOOD AND COOKING,1
+Investing in Fixer-Uppers : A ,1
+How To Do Everything with Your,2
+MySQL,1
+The Photoshop Book for Digital,1
+Mac OS X v. 10.2 Jaguar Killer,1
+The Second Time Around,4
+The Vanished Man: A Lincoln Rh,1
+On Writing,1
+Dreamcatcher,6
+Access 2002 Developer's Handbo,10
