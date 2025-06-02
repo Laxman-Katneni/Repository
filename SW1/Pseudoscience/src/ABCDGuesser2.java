@@ -7,7 +7,7 @@ import components.utilities.FormatChecker;
 /**
  * Pseudoscience
  *
- * @author Lucky Katneni
+ * @author Laxman Katneni
  *
  */
 public final class ABCDGuesser2 {
