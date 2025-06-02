@@ -4,8 +4,7 @@ ZOOM
 # This code is mostly by Kyle Rosenberg augmenting code by
 # Prof. Neil Kirby. I cleaned it up with a few minor additions.
 # -Adam C. Champion
-# Your name, which is inserted at the top of each header file
-# Lucky Katneni
+# Laxman Katneni
 # Change the next line to have your name.
 # This comment will be at the top of every header file.
 readonly AUTHOR_NAME="Adam C. Champion"
