@@ -1,4 +1,4 @@
-# @Team Run-time-terror - Victor Madelaine, Jason Su, Laxman Katneni, Khushi Patel, Landon McElroy
+#@Authors @Team Run-time-terror - Victor Madelaine, Jason Su, Laxman Katneni, Khushi Patel, Landon McElroy
 require_relative "Event"
 require_relative "ClassOSU"
 require_relative "Schedule"
