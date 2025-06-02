@@ -1,0 +1,186 @@
+--*********************Sample Query #1*********************************
+
+SELECT title FROM
+             Book NATURAL JOIN Book_Author WHERE
+                                               Book_Author.Name LIKE "%Pratchett%"
+                                               AND Price < 10;
+
+--*********************Sample Query #2*********************************
+
+SELECT Title, Date FROM
+                       Book_Sold bs JOIN Sale s on s.Sale_ID = bs.Sale_ID
+                           JOIN Book B on B.ISBN = bs.ISBN WHERE
+                                                               Customer_ID = 4;
+
+
+
+--*********************Sample Query #3*********************************
+
+SELECT Title, ISBN 
+FROM Book 
+WHERE Number_In_Stock < 5;
+
+
+--*********************Sample Query #4*********************************
+
+SELECT Fname, Lname, Title
+FROM  Sale s
+    JOIN Book_Sold bs on s.Sale_ID = bs.Sale_ID
+    JOIN Customer c on c.Customer_ID = s.Customer_ID
+    JOIN Book b on b.ISBN = bs.ISBN
+    JOIN Book_Author ba on b.ISBN = ba.ISBN
+WHERE ba.Name LIKE "%Pratchett%";
+
+
+--*********************Sample Query #5*********************************
+
+SELECT Fname, Lname, SUM(Quantity) AS Total_Books_Purchased
+From Sale s
+	JOIN Book_Sold bs on s.Sale_ID = bs.Sale_ID
+	JOIN Customer c on c.Customer_ID = s.Customer_ID
+GROUP BY s.Customer_ID
+ORDER BY Total_Books_Purchased DESC
+LIMIT 1;
+
+
+--*********************Sample Query #6*********************************
+
+SELECT Publisher, COUNT(Book.ISBN) AS Book_Count 
+FROM Book GROUP BY Publisher
+
+
+--*********************Sample Query #7*********************************
+
+SELECT Fname, Lname, COUNT(p.Promotion_ID) AS Number_Of_Promotions
+FROM Employee e
+    JOIN Promotions p on e.Employee_Number = p.Employee_Number
+GROUP BY e.Employee_Number
+
+
+--*********************Sample Query #8*********************************
+
+SELECT Title, SUM(Quantity) AS Total_Sold
+FROM Book_Sold bs
+    JOIN Book b on b.ISBN = bs.ISBN
+GROUP BY b.ISBN
+
+
+--*************************************************************************************************************************
+
+--*********************Advanced Query #1*********************************
+
+SELECT Fname, Lname, ROUND(SUM(bs.Quantity * b.Price), 2) AS Total_Spent
+FROM Sale S
+JOIN Customer C on S.Customer_ID = C.Customer_ID
+JOIN Book_Sold BS on S.Sale_ID = BS.Sale_ID
+JOIN Book B on B.ISBN = BS.ISBN
+GROUP BY c.Customer_ID
+
+
+--*********************Advanced Query #2*********************************
+
+SELECT C.Fname, C.Lname, C.Email
+FROM Customer C
+JOIN Sale S on C.Customer_ID = S.Customer_ID
+JOIN Book_Sold BS on S.Sale_ID = BS.Sale_ID
+JOIN Book B on B.ISBN = BS.ISBN
+GROUP BY C.Customer_ID
+HAVING SUM(BS.Quantity * B.Price) > (
+    SELECT AVG(Total_Per_Customer)
+    FROM (
+        SELECT C2.Customer_ID, SUM(BS2.Quantity * B2.Price) AS Total_Per_Customer
+        FROM Customer C2
+        JOIN Sale S2 on C2.Customer_ID = S2.Customer_ID
+        JOIN Book_Sold BS2 on S2.Sale_ID = BS2.Sale_ID
+        JOIN Book B2 on B2.ISBN = BS2.ISBN
+        GROUP BY C2.Customer_ID
+         ))
+
+
+--*********************Advanced Query #3*********************************
+
+SELECT B.Title, SUM(BS.Quantity) AS Total_Sold
+FROM Book_Sold BS
+JOIN Book B on B.ISBN = BS.ISBN
+GROUP BY BS.ISBN
+ORDER BY Total_Sold DESC
+
+
+--*********************Advanced Query #4*********************************
+
+SELECT B.Title, ROUND(SUM(B.Price * BS.Quantity), 2) AS Total_Sales
+FROM Book_Sold BS
+JOIN Sale S on S.Sale_ID = BS.Sale_ID
+JOIN Book B on B.ISBN = BS.ISBN
+GROUP BY BS.ISBN
+ORDER BY Total_Sales DESC
+
+
+--*********************Advanced Query #5*********************************
+
+SELECT BA.Name, SUM(BS.Quantity) AS Total_Books_Sold
+FROM Book_Sold BS
+JOIN Book_Author BA on BS.ISBN = BA.ISBN
+GROUP BY BA.Name
+ORDER BY Total_Books_Sold DESC 
+LIMIT 1
+
+
+--*********************Advanced Query #6*********************************
+
+SELECT BA.Name, ROUND(SUM(BS.Quantity * B.Price), 2) AS Total_Sales
+FROM Book_Sold BS
+JOIN Book_Author BA on BS.ISBN = BA.ISBN
+JOIN Book B on B.ISBN = BS.ISBN
+GROUP BY BA.Name
+ORDER BY Total_Sales DESC
+LIMIT 1
+
+
+--*********************Advanced Query #7*********************************
+
+SELECT DISTINCT C.Customer_ID, C.Fname, C.Lname, C.Street_Address, C.City, C.State, C.Zip, C.Email, C.Phone_Number
+FROM Customer C
+JOIN Sale S on C.Customer_ID = S.Customer_ID
+JOIN Book_Sold BS on S.Sale_ID = BS.Sale_ID
+JOIN Book B on BS.ISBN = B.ISBN
+JOIN Book_Author BA on BS.ISBN = BA.ISBN
+JOIN (
+    SELECT BA.Name, ROUND(SUM(BS.Quantity * B2.Price), 2) AS Total_Sales
+    FROM Book_Sold BS
+    JOIN Sale S on BS.Sale_ID = S.Sale_ID
+    JOIN Book_Author BA on BS.ISBN = BA.ISBN
+    JOIN Book B2 on B2.ISBN = BS.ISBN
+    GROUP BY BA.Name
+    ORDER BY Total_Sales DESC
+    LIMIT 1
+) AS Most_Profitable_Author ON Most_Profitable_Author.Name = BA.Name
+
+
+--*********************Advanced Query #8*********************************
+
+SELECT DISTINCT BA.Name
+FROM Book_Author BA
+JOIN Book_Sold BS3 on BA.ISBN = BS3.ISBN
+JOIN Sale S3 on S3.Sale_ID = BS3.Sale_ID
+JOIN (
+    SELECT C.Customer_ID
+    FROM Customer C
+    JOIN Sale S on C.Customer_ID = S.Customer_ID
+    JOIN Book_Sold BS on S.Sale_ID = BS.Sale_ID
+    JOIN Book B on B.ISBN = BS.ISBN
+    GROUP BY C.Customer_ID
+    HAVING SUM(BS.Quantity * B.Price) > (
+    SELECT AVG(Total_Per_Customer)
+    FROM (
+        SELECT C2.Customer_ID, SUM(BS2.Quantity * B2.Price) AS Total_Per_Customer
+        FROM Customer C2
+        JOIN Sale S2 on C2.Customer_ID = S2.Customer_ID
+        JOIN Book_Sold BS2 on S2.Sale_ID = BS2.Sale_ID
+        JOIN Book B2 on B2.ISBN = BS2.ISBN
+        GROUP BY C2.Customer_ID
+         )
+    )
+) AS Customers_Spent_Above_Average ON Customers_Spent_Above_Average.Customer_ID = S3.Customer_ID
+
+

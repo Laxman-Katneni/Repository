@@ -1,0 +1,314 @@
+a.
+
+SELECT Fname, Lname, ROUND(SUM(bs.Quantity * b.Price), 2) AS Total_Spent
+FROM Sale S
+JOIN Customer C on S.Customer_ID = C.Customer_ID
+JOIN Book_Sold BS on S.Sale_ID = BS.Sale_ID
+JOIN Book B on B.ISBN = BS.ISBN
+GROUP BY c.Customer_ID
+
+Expected Output:
+Courtney,Lane,49.39
+Rahim,Crosby,19.95
+Teegan,Gordon,188.79
+Scarlet,Lowery,23.48
+Whitney,Marsh,763.8
+Ronan,Shaw,159.93
+Marny,Charles,81.93
+Asher,Porter,233.3
+Ira,Mathews,118.9
+Irma,Garza,222.22
+Joel,Ingram,167.94
+Fritz,Snyder,106.43
+Denton,Wells,387.83
+Ulla,Logan,405.84
+Aretha,Erickson,305.49
+
+
+
+b.
+
+SELECT C.Fname, C.Lname, C.Email
+FROM Customer C
+JOIN Sale S on C.Customer_ID = S.Customer_ID
+JOIN Book_Sold BS on S.Sale_ID = BS.Sale_ID
+JOIN Book B on B.ISBN = BS.ISBN
+GROUP BY C.Customer_ID
+HAVING SUM(BS.Quantity * B.Price) > (
+    SELECT AVG(Total_Per_Customer)
+    FROM (
+        SELECT C2.Customer_ID, SUM(BS2.Quantity * B2.Price) AS Total_Per_Customer
+        FROM Customer C2
+        JOIN Sale S2 on C2.Customer_ID = S2.Customer_ID
+        JOIN Book_Sold BS2 on S2.Sale_ID = BS2.Sale_ID
+        JOIN Book B2 on B2.ISBN = BS2.ISBN
+        GROUP BY C2.Customer_ID
+         )
+    )
+
+Expected Output:
+Whitney,Marsh,faucibus.orci@hotmail.org
+Asher,Porter,lorem@yahoo.ca
+Irma,Garza,tellus.aenean.egestas@outlook.com
+Denton,Wells,libero.proin.sed@hotmail.net
+Ulla,Logan,vestibulum.lorem@protonmail.edu
+Aretha,Erickson,mauris.suspendisse@outlook.net
+
+
+
+c.
+
+SELECT B.Title, SUM(BS.Quantity) AS Total_Sold
+FROM Book_Sold BS
+JOIN Book B on B.ISBN = BS.ISBN
+GROUP BY BS.ISBN
+ORDER BY Total_Sold DESC
+
+Expected Output:
+Access 2002 Developer's Handbo,10
+Dreamcatcher,6
+Introductory Econometrics: A M,6
+Contact,5
+A Walk to Remember,5
+The Second Time Around,4
+Beyond Coso : Internal Control,3
+House of Leaves,3
+Engaging The Enemy,3
+How To Do Everything with Your,2
+The Data Warehouse Toolkit: Th,2
+Message in a Bottle,2
+Lucky: A Memoir,2
+The Hours,2
+Econometric Analysis of Cross ,2
+Choosing & Using Hand Tools,2
+The Magician's Assistant,2
+Real World FPGA Design with Ve,2
+On Human Nature,2
+Atonement,2
+On Writing,1
+The Vanished Man: A Lincoln Rh,1
+Mac OS X v. 10.2 Jaguar Killer,1
+The Photoshop Book for Digital,1
+MySQL,1
+Investing in Fixer-Uppers : A ,1
+ON FOOD AND COOKING,1
+The Future of Life,1
+Twelve Times Blessed,1
+Pyramids,1
+Words and Rules: The Ingredien,1
+Bel Canto: A Novel,1
+Patron Saint of Liars,1
+A Visual Dictionary of Archite,1
+The Notebook,1
+The Dark Highlander,1
+How the Mind Works,1
+Lullaby: A Novel,1
+Amsterdam,1
+Enduring Love,1
+Letters to Kelly,1
+Love By Design,1
+The Vampire's Violin,1
+Pale Blue Dot: A Vision of the,1
+ColdFusion MX Web Application ,1
+The Lovely Bones: A Novel,1
+The Jester,1
+Numerical Techniques in Financ,1
+Financial Modeling ,1
+Professional SQL Server 2000 P,1
+The Rescuer: The O'Malley Seri,1
+A New Kind of Science,1
+The Complete Illustrated Guide,1
+White Noise ,1
+Consilience: The Unity of Know,1
+
+
+
+d.
+
+SELECT B.Title, ROUND(SUM(B.Price * BS.Quantity), 2) AS Total_Sales
+FROM Book_Sold BS
+JOIN Sale S on S.Sale_ID = BS.Sale_ID
+JOIN Book B on B.ISBN = BS.ISBN
+GROUP BY BS.ISBN
+ORDER BY Total_Sales DESC
+
+Expected Output:
+Access 2002 Developer's Handbo,699.9
+Introductory Econometrics: A M,647.7
+Real World FPGA Design with Ve,166
+Beyond Coso : Internal Control,150
+Econometric Analysis of Cross ,149.9
+The Second Time Around,104
+The Data Warehouse Toolkit: Th,100
+Financial Modeling ,70
+House of Leaves,59.85
+Dreamcatcher,47.94
+A New Kind of Science,44.95
+Professional SQL Server 2000 P,41.99
+The Photoshop Book for Digital,39.99
+Contact,39.95
+A Visual Dictionary of Archite,39.95
+The Complete Illustrated Guide,39.95
+Choosing & Using Hand Tools,39.9
+ColdFusion MX Web Application ,38.49
+On Human Nature,37.9
+Numerical Techniques in Financ,35
+MySQL,34.99
+How To Do Everything with Your,34.98
+A Walk to Remember,34.95
+Mac OS X v. 10.2 Jaguar Killer,29.99
+Atonement,28
+The Jester,27.95
+The Magician's Assistant,26
+Twelve Times Blessed,25.95
+The Vanished Man: A Lincoln Rh,25
+Lucky: A Memoir,23.9
+Engaging The Enemy,22.5
+ON FOOD AND COOKING,22
+The Future of Life,22
+The Lovely Bones: A Novel,21.95
+Investing in Fixer-Uppers : A ,18.95
+How the Mind Works,17.95
+Lullaby: A Novel,17.47
+Words and Rules: The Ingredien,15
+Message in a Bottle,15
+Consilience: The Unity of Know,15
+Love By Design,14.95
+White Noise ,14
+Bel Canto: A Novel,13.95
+Patron Saint of Liars,13.95
+Enduring Love,13
+The Rescuer: The O'Malley Seri,12.99
+The Notebook,12.95
+Pale Blue Dot: A Vision of the,12.95
+Amsterdam,12
+On Writing,7.99
+Pyramids,7.99
+The Dark Highlander,6.99
+The Vampire's Violin,6.99
+The Hours,6.88
+Letters to Kelly,4.75
+
+
+
+e.
+
+SELECT BA.Name, SUM(BS.Quantity) AS Total_Books_Sold
+FROM Book_Sold BS
+JOIN Book_Author BA on BS.ISBN = BA.ISBN
+GROUP BY BA.Name
+ORDER BY Total_Books_Sold DESC 
+LIMIT 1
+
+Expected Output:
+Paul Litwin,10
+
+
+
+f.
+
+SELECT BA.Name, ROUND(SUM(BS.Quantity * B.Price), 2) AS Total_Sales
+FROM Book_Sold BS
+JOIN Book_Author BA on BS.ISBN = BA.ISBN
+JOIN Book B on B.ISBN = BS.ISBN
+GROUP BY BA.Name
+ORDER BY Total_Sales DESC
+LIMIT 1
+
+Expected Output:
+Jeffrey M. Wooldridge ,797.6
+
+
+
+g.
+
+SELECT DISTINCT C.Customer_ID, C.Fname, C.Lname, C.Street_Address, C.City, C.State, C.Zip, C.Email, C.Phone_Number
+FROM Customer C
+JOIN Sale S on C.Customer_ID = S.Customer_ID
+JOIN Book_Sold BS on S.Sale_ID = BS.Sale_ID
+JOIN Book B on BS.ISBN = B.ISBN
+JOIN Book_Author BA on BS.ISBN = BA.ISBN
+JOIN (
+    SELECT BA.Name, ROUND(SUM(BS.Quantity * B2.Price), 2) AS Total_Sales
+    FROM Book_Sold BS
+    JOIN Sale S on BS.Sale_ID = S.Sale_ID
+    JOIN Book_Author BA on BS.ISBN = BA.ISBN
+    JOIN Book B2 on B2.ISBN = BS.ISBN
+    GROUP BY BA.Name
+    ORDER BY Total_Sales DESC
+    LIMIT 1
+) AS Most_Profitable_Author ON Most_Profitable_Author.Name = BA.Name
+
+Expected Output:
+4,Teegan,Gordon,"Ap #882-6652 Non, Ave",Hillsboro,Indiana,63467,vitae@yahoo.ca,3266155003
+14,Denton,Wells,Ap #213-6448 Libero. Ave,Cedar Rapids,Texas,39122,libero.proin.sed@hotmail.net,1984566706
+12,Joel,Ingram,449-3523 Mi Avenue,Lawton,Maryland,36961,dictum.placerat@hotmail.com,3969130217
+19,Aretha,Erickson,Ap #740-4384 Tincidunt Av.,Lewiston,Arkansas,58734,mauris.suspendisse@outlook.net,8464669406
+9,Asher,Porter,652-8488 Consectetuer Avenue,Virginia Beach,Illinois,65552,lorem@yahoo.ca,1181857075
+11,Irma,Garza,Ap #776-585 Proin Road,Idaho Falls,Louisiana,55416,tellus.aenean.egestas@outlook.com,4916452201
+
+
+
+h.
+
+SELECT DISTINCT BA.Name
+FROM Book_Author BA
+JOIN Book_Sold BS3 on BA.ISBN = BS3.ISBN
+JOIN Sale S3 on S3.Sale_ID = BS3.Sale_ID
+JOIN (
+    SELECT C.Customer_ID
+    FROM Customer C
+    JOIN Sale S on C.Customer_ID = S.Customer_ID
+    JOIN Book_Sold BS on S.Sale_ID = BS.Sale_ID
+    JOIN Book B on B.ISBN = BS.ISBN
+    GROUP BY C.Customer_ID
+    HAVING SUM(BS.Quantity * B.Price) > (
+    SELECT AVG(Total_Per_Customer)
+    FROM (
+        SELECT C2.Customer_ID, SUM(BS2.Quantity * B2.Price) AS Total_Per_Customer
+        FROM Customer C2
+        JOIN Sale S2 on C2.Customer_ID = S2.Customer_ID
+        JOIN Book_Sold BS2 on S2.Sale_ID = BS2.Sale_ID
+        JOIN Book B2 on B2.ISBN = BS2.ISBN
+        GROUP BY C2.Customer_ID
+         )
+    )
+) AS Customers_Spent_Above_Average ON Customers_Spent_Above_Average.Customer_ID = S3.Customer_ID
+
+Expected Output:
+Don DeLillo
+Alice Sebold
+Nicholas Sparks 
+Ken Getz
+Mike Gunderloy
+Paul Litwin
+Jeffery Deaver
+Jacquelyn Mitchard
+Carl Sagan 
+Michael Cunningham
+Jeffrey M. Wooldridge 
+Margy Ross
+Ralph Kimball
+Ann Patchett 
+Mary Higgins Clark
+Mary Higgins Clark 
+Mark Z. Danielewski 
+Steven Pinker 
+Paul DuBois
+Ian McEwan 
+Michael Romkey 
+Simon Benninga 
+Stephen King 
+Stephen King
+Chuck Palahniuk 
+Bill Mann
+Nora Roberts 
+Ken Coffman 
+Karen Marie Moning
+Ann Patchett
+Francis D. K. Ching
+Steven J. Root 
+Suzanne Brockmann
+Terry Pratchett
+Jay P. Decima 
+
