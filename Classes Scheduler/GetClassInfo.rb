@@ -1,5 +1,5 @@
 # Created 9/25/2023 by Landon McElroy
-# Edited 10/09/2023 by Lucky Katneni (added getClassDescrip method)
+# @author Landon McElroy & Laxman Katneni
 
 require 'mechanize'
 require 'nokogiri'
